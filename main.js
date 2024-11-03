@@ -1,9 +1,10 @@
 window.addEventListener("DOMContentLoaded", main);
 
 //Skapar en global variabel för rubrikens textinnehåll för att den ska vara tillgänglig utanför funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt den.
+//Beskriv scenerna
 const h2Scene1 = "Headline Scene 1";
 const pScene1 = "Text Scene 1";
-const imgScene1 = "/images/greencat.jpg";
+const imgScene1= "/images/greencat.jpg";
 
 const h2Scene2 = "Headline Scene 2";
 const pScene2 = "Text Scene 2";
@@ -13,26 +14,92 @@ const h2Scene3 = "Headline Scene 3";
 const pScene3 = "Text Scene 3";
 const imgScene3 = "/images/rabbithole.jpeg";
 
+const h2Scene4 = "Headline Scene 4";
+const pScene4 = "Text Scene 4";
+const imgScene4 = "/images/skull.jpg";
+
+const h2Scene5 = "Headline Scene 5";
+const pScene5 = "Text Scene 5";
+const imgScene5 = "/images/planetportal.jpg";
+
 //Lägga till en array, men hur?
 //const listOfSceneContentScene1 = [h2Scene1, pScene1, imgScene1];
-//Hur kan man förbättra funktionerna och återanvända dom?
+//Hur kan man förbättra funktionerna och återanvända dom? CHECK! :D
+//Knapparna funkar att trycka på nu efter att dom lades in i en funktion så de inte anropas direkt när main körs, utan först när man klickat. 
+
 
 function main() {
-    scene1GlimpseOfTheGreenCat("/images/greencat.jpg", h2Scene1, pScene1);
-    const buttonLeft = document.getElementById("buttonRight");
-    buttonLeft.onclick = function enterScene3WatchingTv() {
-        scene2WatchingTv("/images/watchingtv.jpg", h2Scene3, pScene3);
+    scene1GlimpseOfTheGreenCat();
+}
+
+function scene1GlimpseOfTheGreenCat() {
+
+    loadSceneContent(imgScene1, h2Scene1, pScene1);
+
+    const buttonLeft = document.getElementById("buttonLeft");
+    buttonLeft.onclick = function enterScene2WatchingTv() {
+        scene2WatchingTv();
     };
 
-    const buttonRight = document.getElementById("buttonLeft");
-    buttonRight.onclick = function enterScene2Rabbithole() {
-        scene3Rabbithole("/images/rabbithole.jpeg", h2Scene2, pScene2);
+    const buttonRight = document.getElementById("buttonRight");
+    buttonRight.onclick = function enterScene3Rabbithole() {
+        scene3Rabbithole();
+    };
+}
+
+function scene2WatchingTv() {
+
+    loadSceneContent(imgScene2, h2Scene2, pScene2);
+
+    const buttonLeft = document.getElementById("buttonLeft");
+    buttonLeft.onclick = function enterScene4Collapse() {
+        scene4Collapse();
     };
 
-    //Knapparna funkar att trycka på nu efter att dom lades in i en funktion så de inte anropas direkt när main körs, utan först när man klickat. 
+    const buttonRight = document.getElementById("buttonRight");
+    buttonRight.onclick = function enterScene3Rabbithole() {
+        scene3Rabbithole();
+    };
 }
 
-function scene1GlimpseOfTheGreenCat(img, headline, paragraph) {
+function scene3Rabbithole() {
+    loadSceneContent(imgScene3, h2Scene3, pScene3);
+
+    const buttonLeft = document.getElementById("buttonLeft");
+    buttonLeft.onclick = function enterScene2WatchingTv() {
+        scene2WatchingTv();
+    };
+
+    const buttonRight = document.getElementById("buttonRight");
+    buttonRight.onclick = function enterScene5PlanetA() {
+        scene5PlanetA();
+    };
+}
+
+function scene4Collapse() {
+    loadSceneContent(imgScene4, h2Scene4, pScene4);
+
+    //Göra så att det bara finns en knapp här som leder till main page (som ännu ej är skapad)
+}
+
+function scene5PlanetA() {
+    loadSceneContent(imgScene5, h2Scene5, pScene5);
+
+    const buttonLeft = document.getElementById("buttonLeft");
+    buttonLeft.onclick = function enterScene2WatchingTv() {
+        scene2WatchingTv();
+    };
+
+    const buttonRight = document.getElementById("buttonRight");
+    buttonRight.onclick = function enterScene6TheMaze() {
+        scene6TheMaze();
+    };
+}
+
+//Skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
+//Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
+//Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text nedan i varje scen-funktion. 
+function loadSceneContent(img, headline, paragraph) {
     const image = document.getElementById("background-img");
     image.src = img;
 
@@ -41,33 +108,7 @@ function scene1GlimpseOfTheGreenCat(img, headline, paragraph) {
 
     const p = document.getElementById("scene-paragraph");
     p.textContent = paragraph;
-
 }
-
-function scene2WatchingTv(img, headline, paragraph) {
-    const image = document.getElementById("background-img");
-    image.src = img;
-
-    const h2 = document.getElementById("scene-headline");
-    h2.textContent = headline;
-
-    const p = document.getElementById("scene-paragraph");
-    p.textContent = paragraph;
-
-}
-
-function scene3Rabbithole(img, headline, paragraph) {
-    const image = document.getElementById("background-img");
-    image.src = img;
-
-    const h2 = document.getElementById("scene-headline");
-    h2.textContent = headline;
-
-    const p = document.getElementById("scene-paragraph");
-    p.textContent = paragraph;
-
-}
-
 
 
 
