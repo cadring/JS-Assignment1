@@ -22,9 +22,11 @@ const h2Scene5 = "Headline Scene 5";
 const pScene5 = "Text Scene 5";
 const imgScene5 = "/images/planetportal.jpg";
 
-//Lägga till en array, men hur?
-//const listOfSceneContentScene1 = [h2Scene1, pScene1, imgScene1];
-//Hur kan man förbättra funktionerna och återanvända dom? CHECK! :D
+//Lägga till en array, men hur? const listOfSceneContentScene1 = [h2Scene1, pScene1, imgScene1];
+//Skapa main-page
+//Endast en knapp på main page och slutsidorna
+//Hur kan man förbättra scen-funktionerna och återanvända dom? CHECK! :D
+//Hur kan man förbättra knapp-funktionerna och återanvända dom? CHECK! :D
 //Knapparna funkar att trycka på nu efter att dom lades in i en funktion så de inte anropas direkt när main körs, utan först när man klickat. 
 
 
@@ -36,7 +38,10 @@ function scene1GlimpseOfTheGreenCat() {
 
     loadSceneContent(imgScene1, h2Scene1, pScene1);
 
-    const buttonLeft = document.getElementById("buttonLeft");
+    loadLeftButton(scene2WatchingTv); 
+    loadRightButton(scene3Rabbithole);
+
+    /*const buttonLeft = document.getElementById("buttonLeft");
     buttonLeft.onclick = function enterScene2WatchingTv() {
         scene2WatchingTv();
     };
@@ -44,7 +49,7 @@ function scene1GlimpseOfTheGreenCat() {
     const buttonRight = document.getElementById("buttonRight");
     buttonRight.onclick = function enterScene3Rabbithole() {
         scene3Rabbithole();
-    };
+    };*/
 }
 
 function scene2WatchingTv() {
@@ -108,6 +113,21 @@ function loadSceneContent(img, headline, paragraph) {
 
     const p = document.getElementById("scene-paragraph");
     p.textContent = paragraph;
+}
+
+//Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda, detta genom att funktionen enterScene laddar in vald scen precis som tidigare.
+function loadLeftButton(toScene) {
+    const buttonLeft = document.getElementById("buttonLeft");
+    buttonLeft.onclick = function enterScene() {
+        toScene();
+    };      
+}
+
+function loadRightButton(toScene) {
+    const buttonRight = document.getElementById("buttonRight");
+    buttonRight.onclick = function enterScene() {
+        toScene();
+    };
 }
 
 
