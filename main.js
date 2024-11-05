@@ -32,7 +32,7 @@ const imgScene7 = "/images/shovel.jpeg";
 
 const h2Scene8 = "Headline Scene 8";
 const pScene8 = "Text Scene 8";
-const imgScene8 = "/images/followthegreencat.jpg";
+const imgScene8 = "/images/stargateportal.jpeg";
 
 const h2Scene9 = "Headline Scene 9";
 const pScene9 = "Text Scene 9";
@@ -97,20 +97,20 @@ function scene6SearchItems() {
     loadSceneContent(imgScene6, h2Scene6, pScene6);
 
     loadLeftButton(scene2WatchingTv); 
-    loadRightButton(scene7TheMaze);
+    loadRightButton(scene4Collapse);
 }
 
 function scene7TheMaze() {
     loadSceneContent(imgScene7, h2Scene7, pScene7);
 
-    loadLeftButton(scene4Collapse); 
+    loadLeftButton(scene4Collapse); //Ta bort knapp, endast ett val i denna scen
     loadRightButton(scene8DigForSubstance);
 }
 
 function scene8DigForSubstance() {
     loadSceneContent(imgScene8, h2Scene8, pScene8);
 
-    loadLeftButton(scene4Collapse); 
+    loadLeftButton(scene2WatchingTv); 
     loadRightButton(scene9BackToEarth);
 
 }
@@ -127,6 +127,8 @@ function scene10TreeOfLife() {
     loadLeftButton(scene4Collapse); //Knapp ska tas bort
     loadRightButton(scene10TreeOfLife);
 }
+
+
 
 /*function scene11TheFinalQuest() {
     loadSceneContent(imgScene11, h2Scene11, pScene11);
