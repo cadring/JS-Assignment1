@@ -1,3 +1,45 @@
+body {
+    
+    font-family: "Orbitron";
+    background-color:rgb(90, 255, 195)
+    
+
+}
 .hide-button {
     display: none;
 }
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+#buttonLeft, #buttonRight {
+    font-family: "Orbitron";
+   
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+
+}
+#background-img {
+    max-height: 25%;
+    width: 35%;
+}
+
+.h1-container {
+    display: flex;
+    justify-content: center;
+}
+
+.h2-container {
+    display: flex;
+    justify-content: center;
+}
+.text-container {
+    display: flex;
+    justify-content: center;
+}
+
+
