@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", main);
 funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt dem.*/
 const h1Scene0 = "The Fourth Dimension";
 //const h2Scene0 = "Headline Scene 0"; ev inte ha med i scen0
-const pScene0 = "Plot";
+const pScene0 = "The world is under the threath of an apocalypse. Humans have been draining the world from it's resources, causing a slow destruction of nature. Despite Mother Earth's warnings, humans have not yet been listening to her words. Mother Earth is incarnated through The Tree of life and holds the power of the Fourth Dimension, the dimension of time. Mother Earth created time in order to make the world a habitual place for nature and it's creatures since a timeless world is impossible to live in. Time gives nature a course and the ability to progress and give and hold life. Without time there would be no events, no cause, no effect, no course. Nothing would be able to change or progress, there would be no before nor after. Causality would collapse and therefore time and life itself, beacuse nothing would have a meaning and the world would be stuck in a static condition. As a result all living creatures would be put in this static condition, with no ability to experience existence. Thus, we wouldn't know if we're existing or not, we would be stuck in a frozen moment, stuck in timelessness. The existence of earth is crucial for the existence of the universe as a whole, since earth is working as a lifeforcer and a balancer in the universe. Man's draining of the world and its resources has caused an imbalance in universe. This cause of imbalance has made the universe increase its acceleration leading to a change in the speed of which universe is normally expanding at. These changes in how universe is expanding has led to to changes in how spacetime curves. The Tree of Life which holds the power of The Fourth Dimension, is forced to resort to its last defence, by slowly create more and more extreme weather on earth, slowly making it more and more inhabituable to stop people from destructing it and therefore destruct all life. Do you dare to try to save the World?";
 const imgScene0 = "/images/hourglass.jpeg";
 
 const h2Scene1 = "Headline Scene 1";
@@ -60,6 +60,7 @@ const imgScene10 = "/images/motherearth1.jpg";
 //Lägga in min textfil med handlingen i ett Word-dok. 
 //Skriva README
 //Styling
+//Hur gör man styckeindelning i texten som lagts in i js?
 
 function main() {
     scene0TheBeginning();
@@ -225,6 +226,13 @@ updateButtonVisibility(false, true); = Visar endast höger
 updateButtonVisibility(true, true); = Döljer knapparna
 */
 
+/**Om tid blir över jobba vidare på denna
+function inputAnswerToRiddle() {
+    const answerRiddle = document.createElement("INPUT");
+    answerRiddle.setAttribute("type", "text");
+    document.body.appendChild(answerRiddle);
+}*/
+
 /**GAMMAL KOD SOM UPPDATERATS:
 Gamla koden för function loadButton...
 function loadLeftButton(toScene, text) {
@@ -275,6 +283,6 @@ function loadScene0Content(img, title, paragraph) {
 
     const p = document.getElementById("scene-paragraph");
     p.textContent = paragraph;
-}*/ 
+}*/
 
 
