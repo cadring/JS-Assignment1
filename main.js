@@ -1,9 +1,9 @@
 window.addEventListener("DOMContentLoaded", main);
 
-//Skapar en global variabel för rubrikens textinnehåll för att den ska vara tillgänglig utanför funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt den.
-//Beskriv scenerna
+/**Skapar globala variabler så att dessa ska vara tillgängliga utanför 
+funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt dem.*/
 const h1Scene0 = "The Fourth Dimension";
-//const h2Scene0 = "Game title";
+//const h2Scene0 = "Headline Scene 0"; ev inte ha med i scen0
 const pScene0 = "Plot";
 const imgScene0 = "/images/hourglass.jpeg";
 
@@ -47,28 +47,30 @@ const h2Scene10 = "Headline Scene 10";
 const pScene10 = "Text Scene 10";
 const imgScene10 = "/images/motherearth1.jpg";
 
-/*const h2Scene11 = "Headline Scene 11";
-const pScene11 = "Text Scene 11";
-const imgScene11 = "/images/motherearth1.jpg";*/
-
+//TO DO:
 //Lägga till en array, men hur? const listOfSceneContentScene1 = [h2Scene1, pScene1, imgScene1];
-//Skapa main-page
-//Endast en knapp på main page och slutsidorna
-//Ändra knapparna?
+//Skapa main-page = Scene0 CHECK!
+//Endast en knapp på main page och slutsidorna CHECK!
 //Hur kan man förbättra scen-funktionerna och återanvända dom? CHECK! :D
 //Hur kan man förbättra knapp-funktionerna och återanvända dom? CHECK! :D
-//Knapparna funkar att trycka på nu efter att dom lades in i en funktion så de inte anropas direkt när main körs, utan först när man klickat. 
+//Ha med ljud eller video nånstans?
+//Plocka upp och bära föremål, men hur?
+//Förändringar ska sparas till Local Storage så användaren kan fortsätta efter en reload.
+//Alla globala funktioner, listor och objekt är strukturerade och namngivna väl samt dokumenterade med JS-doc.
+//Lägga in min textfil med handlingen i ett Word-dok. 
+//Skriva README
+//Styling
 
 function main() {
-    //scene1GlimpseOfTheGreenCat();
     scene0TheBeginning();
 }
 
 function scene0TheBeginning() {
     loadSceneContent(imgScene0, h1Scene0, pScene0); 
 
-    loadLeftButton(); //Ta bort knapp
+    loadLeftButton();
     loadRightButton(scene1GlimpseOfTheGreenCat, "Begin");
+    changeButtonVisibility(false, true);
 }
 
 function scene1GlimpseOfTheGreenCat() {
@@ -77,6 +79,7 @@ function scene1GlimpseOfTheGreenCat() {
 
     loadLeftButton(scene2WatchingTv, "Ignore what you just heard and continues to watch tv"); 
     loadRightButton(scene3Rabbithole, "Go outside and follow what you now understand is a green cat named Alphaba. Alphaba leads you to a rabbithole, you then enter the rabbithole");
+    changeButtonVisibility(true, true);
 }
 
 function scene2WatchingTv() {
@@ -85,6 +88,7 @@ function scene2WatchingTv() {
 
     loadLeftButton(scene4Collapse, "Can't stand to hear about this anymore, they must be exaggerating you say to yourself and decides ignore the information"); 
     loadRightButton(scene3Rabbithole, "You takes the message seriously and decides to go out and follow what you think might be a green cat");
+    changeButtonVisibility(true, true);
 }
 
 function scene3Rabbithole() {
@@ -92,13 +96,15 @@ function scene3Rabbithole() {
 
     loadLeftButton(scene2WatchingTv, "Regret ever coming here and goes back home to watch tv"); 
     loadRightButton(scene5PlanetA, "Solve the riddle and enter the portal to planet Alvograth");
+    changeButtonVisibility(true, true);
 }
 
 function scene4Collapse() {
     loadSceneContent(imgScene4, h2Scene4, pScene4);
-    //Göra så att det bara finns en knapp (restart) här som leder till main page (som ännu ej är skapad)
+    
     loadLeftButton(); 
-    loadRightButton(scene0TheBeginning, Restart);
+    loadRightButton(scene0TheBeginning, "Restart");
+    changeButtonVisibility(false, true);
 }
 
 function scene5PlanetA() {
@@ -106,6 +112,7 @@ function scene5PlanetA() {
 
     loadLeftButton(scene2WatchingTv, "Gives up and goes home"); 
     loadRightButton(scene6SearchItems, "Begins the search for the needed items");
+    changeButtonVisibility(true, true);
 }
 
 function scene6SearchItems() {
@@ -113,13 +120,15 @@ function scene6SearchItems() {
 
     loadLeftButton(scene4Collapse, "Hesitate and want to give up and go back home"); 
     loadRightButton(scene7TheMaze, "Enter the maze");
+    changeButtonVisibility(true, true);
 }
 
 function scene7TheMaze() {
     loadSceneContent(imgScene7, h2Scene7, pScene7);
 
-    loadLeftButton(scene4Collapse); //Ta bort knapp, endast ett val i denna scen
+    loadLeftButton(); 
     loadRightButton(scene8DigForSubstance, "You start to dig");
+    changeButtonVisibility(false, true);
 }
 
 function scene8DigForSubstance() {
@@ -127,52 +136,30 @@ function scene8DigForSubstance() {
 
     loadLeftButton(scene2WatchingTv, "Hope this is the way back because you just want to give up and go home"); 
     loadRightButton(scene9BackToEarth, "Follow Alphaba into the portal");
+    changeButtonVisibility(true, true);
 
 }
 function scene9BackToEarth() {
     loadSceneContent(imgScene9, h2Scene9, pScene9);
 
-    loadLeftButton(scene4Collapse); //Knapp ska tas bort
+    loadLeftButton(); 
     loadRightButton(scene10TreeOfLife, "Finish planting the Stellarplankton in The Tree of Life");
+    changeButtonVisibility(false, true);
 }
 
 function scene10TreeOfLife() {
     loadSceneContent(imgScene10, h2Scene10, pScene10);
-    //Göra så att det bara finns en knapp här som leder till sista scenen.
-    loadLeftButton(scene4Collapse); //Knapp ska tas bort, Restart-knapp på slutet som leder till scen0?
+
+    loadLeftButton();
     loadRightButton(scene0TheBeginning, "Back to main page");
+    changeButtonVisibility(false, true);
 }
-
-
-
-/*function scene11TheFinalQuest() {
-    loadSceneContent(imgScene11, h2Scene11, pScene11);
-
-    loadLeftButton(scene4Collapse); //Ska tas bort
-    loadRightButton(scene11TheFinalQuest);
-    //Göra så att det bara finns en knapp här som leder till main-paige (ännu ej är skapad).
-}*/
-
-
-//Skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
-//Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
-//Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text nedan i varje scen-funktion. 
-/*function loadScene0Content(img, title, paragraph) {
-    const image = document.getElementById("background-img");
-    image.src = img;
-
-    const h1 = document.getElementById("game-title");
-    h1.textContent = title;
-
-    const p = document.getElementById("scene-paragraph");
-    p.textContent = paragraph;
-}*/ //Denna funktion verkar köra över den under och då hänger titeln med i övriga scener, funkar därför ej
 
 function loadSceneContent(img, title, headline, paragraph) {    
     const image = document.getElementById("background-img");
     image.src = img;
 
-    const h1 = document.getElementById("game-title"); //La in h1-element i html, lagt in title i funktionen loadSceneContent samt lagt in en global variabel const h1Scene0 = "Game title", detta verkar funka :D
+    const h1 = document.getElementById("game-title");
     h1.textContent = title;
 
     const h2 = document.getElementById("scene-headline");
@@ -181,8 +168,16 @@ function loadSceneContent(img, title, headline, paragraph) {
     const p = document.getElementById("scene-paragraph");
     p.textContent = paragraph;
 }
+/**Förklaring function loadSceneContent
+Jag har skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
+Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
+Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text 
+nedan i varje scen-funktion.
+Förklaring const h1:
+La in h1-element i html, lagt in title i funktionen loadSceneContent samt lagt in en global 
+variabel const h1Scene0 = "Game title", och detta verkar funka till skillnad från tidigare kod, se TESTKOD SOM INTE FUNKAT
+ */
 
-//Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda, detta genom att funktionen enterScene laddar in vald scen precis som tidigare.
 function loadLeftButton(toScene, text) {
     const buttonLeft = document.getElementById("buttonLeft");
     buttonLeft.onclick = toScene;
@@ -193,23 +188,59 @@ function loadRightButton(toScene, text) {
     const buttonRight = document.getElementById("buttonRight");
     buttonRight.onclick = toScene;
     buttonRight.textContent = text;
+}
+/**Förklaring function loadLeftButton
+Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda, 
+detta genom att funktionen enterScene laddar in vald scen precis som tidigare.
+ */
 
+function changeButtonVisibility(showLeftButton, showRightButton) {
+    const buttonLeft = document.getElementById("buttonLeft");   
+    const buttonRight = document.getElementById("buttonRight");
+
+    if (buttonLeft) {                                       
+        if (showLeftButton) {
+            buttonLeft.classList.remove("hide-button");     
+        } else {
+            buttonLeft.classList.add("hide-button");        
+        }
     }
 
-/*function loadLeftButton(toScene, text) {
+    if (buttonRight) {
+        if (showRightButton) {
+            buttonRight.classList.remove("hide-button");
+        } else {
+            buttonRight.classList.add("hide-button");
+        }
+    }
+}
+
+/**Förklaring function changeButtonVisibility()
+Skapat en klass i CSS som heter .hide-button satt på display: none. 
+Om buttonLeft, om den ska visas (showLeftButton) dvs påståendet är = sant, ta då bort .hide.button
+Annars om inte showLeftButton då är påståendet = falskt, lägg till .hide.button
+updateButtonVisibility(true, true); = Visar båda knapparna
+updateButtonVisibility(true, false); = Visar endast vänster
+updateButtonVisibility(false, true); = Visar endast höger
+updateButtonVisibility(true, true); = Döljer knapparna
+*/
+
+/**GAMMAL KOD SOM UPPDATERATS:
+Gamla koden för function loadButton...
+function loadLeftButton(toScene, text) {
     const buttonLeft = document.getElementById("buttonLeft");
     buttonLeft.onclick = function enterScene() {
         toScene();
 }
-
 function loadRightButton(toScene) {
     const buttonRight = document.getElementById("buttonRight");
     buttonRight.onclick = function enterScene() {
         toScene();
     };
-}*/
+function enterScene skapades då knapparna först inte funkade att trycka på då det kördes direkt i main och inte när användaren tryckte på dem. 
+}
 
-/*Kod innan function loadSceneContent och loadLeftButton och loadRightButtonsamt kod innan jag la till h1 i scene0:
+Kod innan function loadSceneContent och loadLeftButton och loadRightButtonsamt kod innan jag la till h1 i scene0:
 function scene2WatchingTv() {
 
     function loadSceneContent(img, headline, paragraph) {
@@ -233,5 +264,17 @@ function scene2WatchingTv() {
     };
 }*/
 
+/**TESTKOD SOM INTE FUNKAT
+Denna funktion verkar köra över den under och då hänger titeln med i övriga scener, funkar därför ej
+function loadScene0Content(img, title, paragraph) {
+    const image = document.getElementById("background-img");
+    image.src = img;
+
+    const h1 = document.getElementById("game-title");
+    h1.textContent = title;
+
+    const p = document.getElementById("scene-paragraph");
+    p.textContent = paragraph;
+}*/ 
 
 
