@@ -111,36 +111,36 @@ function scene5PlanetA() {
 function scene6SearchItems() {
     loadSceneContent(imgScene6, h2Scene6, pScene6);
 
-    loadLeftButton(scene4Collapse, "Hesitates and wants to give up and go back home"); 
-    loadRightButton(scene7TheMaze, "Enters the maze");
+    loadLeftButton(scene4Collapse, "Hesitate and want to give up and go back home"); 
+    loadRightButton(scene7TheMaze, "Enter the maze");
 }
 
 function scene7TheMaze() {
     loadSceneContent(imgScene7, h2Scene7, pScene7);
 
     loadLeftButton(scene4Collapse); //Ta bort knapp, endast ett val i denna scen
-    loadRightButton(scene8DigForSubstance);
+    loadRightButton(scene8DigForSubstance, "You start to dig");
 }
 
 function scene8DigForSubstance() {
     loadSceneContent(imgScene8, h2Scene8, pScene8);
 
-    loadLeftButton(scene2WatchingTv, "Hope this is the way back, because you just want to give up and go home"); 
-    loadRightButton(scene9BackToEarth);
+    loadLeftButton(scene2WatchingTv, "Hope this is the way back because you just want to give up and go home"); 
+    loadRightButton(scene9BackToEarth, "Follow Alphaba into the portal");
 
 }
 function scene9BackToEarth() {
     loadSceneContent(imgScene9, h2Scene9, pScene9);
 
     loadLeftButton(scene4Collapse); //Knapp ska tas bort
-    loadRightButton(scene10TreeOfLife);
+    loadRightButton(scene10TreeOfLife, "Finish planting the Stellarplankton in The Tree of Life");
 }
 
 function scene10TreeOfLife() {
     loadSceneContent(imgScene10, h2Scene10, pScene10);
     //Göra så att det bara finns en knapp här som leder till sista scenen.
     loadLeftButton(scene4Collapse); //Knapp ska tas bort, Restart-knapp på slutet som leder till scen0?
-    loadRightButton(scene10TreeOfLife);
+    loadRightButton(scene0TheBeginning, "Back to main page");
 }
 
 
