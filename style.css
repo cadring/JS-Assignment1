@@ -1,45 +1,62 @@
 body {
-    
     font-family: "Orbitron";
-    background-color:rgb(90, 255, 195)
     
-
+    
 }
+
 .hide-button {
     display: none;
 }
+
 .button-container {
     display: flex;
     justify-content: center;
     gap: 40px;
 }
+
 #buttonLeft, #buttonRight {
     font-family: "Orbitron";
-   
+    font-size: 1.2rem;
+    padding: 30px;
+    border-radius: 10px;
+
+    box-shadow: 3px 3px 2px rgb(64, 70, 72);
 }
 
 .img-container {
     display: flex;
     justify-content: center;
-
+   
+    
 }
+
 #background-img {
     max-height: 25%;
     width: 35%;
 }
 
-.h1-container {
+.center-text-content {
     display: flex;
     justify-content: center;
+    
+}
+
+p, #buttonLeft, #buttonRight {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 170px;
+    margin-right: 170px;
+}
+
+.h1-container {
+    font-size: 3rem;
+   
 }
 
 .h2-container {
-    display: flex;
-    justify-content: center;
+    font-size: 1.5rem;
+    
 }
-.text-container {
-    display: flex;
-    justify-content: center;
-}
+
 
 
