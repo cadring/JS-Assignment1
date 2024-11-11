@@ -2,9 +2,9 @@ window.addEventListener("DOMContentLoaded", main);
 
 /**Skapar globala variabler så att dessa ska vara tillgängliga utanför 
 funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt dem.*/
-const h1Scene0 = "The Fourth Dimension";
-//const h2Scene0 = "Headline Scene 0"; ev inte ha med i scen0
-const pScene0 = "The world is under the threath of an apocalypse. Humans have been draining the world from it's resources, causing a slow destruction of nature. Despite Mother Earth's warnings, humans have not yet been listening to her words. Mother Earth is incarnated through The Tree of life and holds the power of the Fourth Dimension, the dimension of time. Mother Earth created time in order to make the world a habitual place for nature and it's creatures since a timeless world is impossible to live in. Time gives nature a course and the ability to progress and give and hold life. Without time there would be no events, no cause, no effect, no course. Nothing would be able to change or progress, there would be no before nor after. Causality would collapse and therefore time and life itself, beacuse nothing would have a meaning and the world would be stuck in a static condition. As a result all living creatures would be put in this static condition, with no ability to experience existence. Thus, we wouldn't know if we're existing or not, we would be stuck in a frozen moment, stuck in timelessness. The existence of earth is crucial for the existence of the universe as a whole, since earth is working as a lifeforcer and a balancer in the universe. Man's draining of the world and its resources has caused an imbalance in universe. This cause of imbalance has made the universe increase its acceleration leading to a change in the speed of which universe is normally expanding at. These changes in how universe is expanding has led to to changes in how spacetime curves. The Tree of Life which holds the power of The Fourth Dimension, is forced to resort to its last defence, by slowly create more and more extreme weather on earth, slowly making it more and more inhabituable to stop people from destructing it and therefore destruct all life. Do you dare to try to save the World?";
+//const h1Scene0 = "The Fourth Dimension";
+const h2Scene0 = "The Fourth Dimension";
+const pScene0 = "The world is under the threath of an apocalypse. Humans have been draining the world from it's resources, causing a slow destruction of nature. Despite Mother Earth's warnings, humans have not yet been listening to her words. \n\n Mother Earth is incarnated through The Tree of life and holds the power of the Fourth Dimension, the dimension of time. Mother Earth created time in order to make the world a habitual place for nature and it's creatures since a timeless world is impossible to live in. Time gives nature a course and the ability to progress and give and hold life. Without time there would be no events, no cause, no effect, no course. Nothing would be able to change or progress, there would be no before nor after. Causality would collapse and therefore time and life itself, beacuse nothing would have a meaning and the world would be stuck in a static condition. As a result all living creatures would be put in this static condition, with no ability to experience existence. Thus, we wouldn't know if we're existing or not, we would be stuck in a frozen moment, stuck in timelessness. \n\n The existence of earth is crucial for the existence of the universe as a whole, since earth is working as a lifeforcer and a balancer in the universe. Man's draining of the world and its resources has caused an imbalance in universe. This cause of imbalance has made the universe increase its acceleration leading to a change in the speed of which universe is normally expanding at. These changes in how universe is expanding has led to to changes in how spacetime curves. The Tree of Life which holds the power of The Fourth Dimension, is forced to resort to its last defence, by slowly create more and more extreme weather on earth, slowly making it more and more inhabituable to stop people from destructing it and therefore destruct all life. \n\n Do you dare to try to save the World?";
 const imgScene0 = "/images/hourglass.jpeg";
 
 const h2Scene1 = "Headline Scene 1";
@@ -54,7 +54,12 @@ const imgScene10 = "/images/motherearth1.jpg";
 //Hur kan man förbättra scen-funktionerna och återanvända dom? CHECK! :D
 //Hur kan man förbättra knapp-funktionerna och återanvända dom? CHECK! :D
 //Ha med ljud eller video nånstans?
-//Plocka upp och bära föremål, men hur?
+
+//Plocka upp och bära föremål, men hur? splice modifiera listan, splice = välja items i arrayer via index nummer
+//let pickedUpItems = ["bird", "pen", "key"]
+//const index = pickedUpItems.indexOf("pen")
+//pickedUpItems.splice(index, 1)
+
 //Förändringar ska sparas till Local Storage så användaren kan fortsätta efter en reload.
 //Alla globala funktioner, listor och objekt är strukturerade och namngivna väl samt dokumenterade med JS-doc.
 //Lägga in min textfil med handlingen i ett Word-dok. 
@@ -67,7 +72,7 @@ function main() {
 }
 
 function scene0TheBeginning() {
-    loadSceneContent(imgScene0, h1Scene0, pScene0); 
+    loadSceneContent(imgScene0, h2Scene0, pScene0); 
 
     loadLeftButton();
     loadRightButton(scene1GlimpseOfTheGreenCat, "Begin");
@@ -78,7 +83,7 @@ function scene1GlimpseOfTheGreenCat() {
 
     loadSceneContent(imgScene1, h2Scene1, pScene1);
 
-    loadLeftButton(scene2WatchingTv, "Ignore what you just heard and continues to watch tv"); 
+    loadLeftButton(scene2WatchingTv, "Ignore what you just heard and continue to watch tv"); 
     loadRightButton(scene3Rabbithole, "Go outside and follow what you now understand is a green cat named Alphaba. Alphaba leads you to a rabbithole, you then enter the rabbithole");
     changeButtonVisibility(true, true);
 }
@@ -87,15 +92,15 @@ function scene2WatchingTv() {
 
     loadSceneContent(imgScene2, h2Scene2, pScene2);
 
-    loadLeftButton(scene4Collapse, "Can't stand to hear about this anymore, they must be exaggerating you say to yourself and decides ignore the information"); 
-    loadRightButton(scene3Rabbithole, "You takes the message seriously and decides to go out and follow what you think might be a green cat");
+    loadLeftButton(scene4Collapse, "Can't stand to hear about this anymore, they must be exaggerating you say to yourself and decide to ignore the information"); 
+    loadRightButton(scene3Rabbithole, "Take the message seriously and decide to go out and follow what you think might be a green cat");
     changeButtonVisibility(true, true);
 }
 
 function scene3Rabbithole() {
     loadSceneContent(imgScene3, h2Scene3, pScene3);
 
-    loadLeftButton(scene2WatchingTv, "Regret ever coming here and goes back home to watch tv"); 
+    loadLeftButton(scene2WatchingTv, "Regret ever coming here and go back home to watch tv"); 
     loadRightButton(scene5PlanetA, "Solve the riddle and enter the portal to planet Alvograth");
     changeButtonVisibility(true, true);
 }
@@ -111,8 +116,8 @@ function scene4Collapse() {
 function scene5PlanetA() {
     loadSceneContent(imgScene5, h2Scene5, pScene5);
 
-    loadLeftButton(scene2WatchingTv, "Gives up and goes home"); 
-    loadRightButton(scene6SearchItems, "Begins the search for the needed items");
+    loadLeftButton(scene2WatchingTv, "Give up and go home"); 
+    loadRightButton(scene6SearchItems, "Begin the search for the needed items");
     changeButtonVisibility(true, true);
 }
 
@@ -122,6 +127,7 @@ function scene6SearchItems() {
     loadLeftButton(scene4Collapse, "Hesitate and want to give up and go back home"); 
     loadRightButton(scene7TheMaze, "Enter the maze");
     changeButtonVisibility(true, true);
+    //Här ska man kunna plocka upp the casket and the shovel
 }
 
 function scene7TheMaze() {
@@ -138,7 +144,7 @@ function scene8DigForSubstance() {
     loadLeftButton(scene2WatchingTv, "Hope this is the way back because you just want to give up and go home"); 
     loadRightButton(scene9BackToEarth, "Follow Alphaba into the portal");
     changeButtonVisibility(true, true);
-
+    //Här ska man kunna pick up the crystal
 }
 function scene9BackToEarth() {
     loadSceneContent(imgScene9, h2Scene9, pScene9);
@@ -146,6 +152,7 @@ function scene9BackToEarth() {
     loadLeftButton(); 
     loadRightButton(scene10TreeOfLife, "Finish planting the Stellarplankton in The Tree of Life");
     changeButtonVisibility(false, true);
+    //Här ska man kunna put down the crystal
 }
 
 function scene10TreeOfLife() {
@@ -156,18 +163,18 @@ function scene10TreeOfLife() {
     changeButtonVisibility(false, true);
 }
 
-function loadSceneContent(img, title, headline, paragraph) {    
+function loadSceneContent(img, headline, paragraph) {    
     const image = document.getElementById("background-img");
     image.src = img;
 
-    const h1 = document.getElementById("game-title");
-    h1.textContent = title;
+    //const h1 = document.getElementById("game-title");
+    //h1.innerText = title;
 
     const h2 = document.getElementById("scene-headline");
-    h2.textContent = headline;
+    h2.innerText = headline;
 
     const p = document.getElementById("scene-paragraph");
-    p.textContent = paragraph;
+    p.innerText = paragraph;
 }
 /**Förklaring function loadSceneContent
 Jag har skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
