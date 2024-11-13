@@ -1,7 +1,5 @@
 body {
     font-family: "Orbitron";
-    
-    
 }
 
 .hide-button {
@@ -14,35 +12,53 @@ body {
     gap: 40px;
 }
 
-#buttonLeft, #buttonRight {
+#buttonLeft,
+#buttonRight {
     font-family: "Orbitron";
     font-size: 1.2rem;
-    padding: 30px;
+    padding: 10px;
     border-radius: 10px;
-
+    border: solid;
+    border-color: rgb(178, 221, 242);
     box-shadow: 3px 3px 2px rgb(64, 70, 72);
+    background-color: blueviolet;
+    color: rgb(178, 221, 242);
 }
 
 .img-container {
     display: flex;
     justify-content: center;
-   
-    
+
 }
 
 #background-img {
     max-height: 25%;
     width: 35%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 .center-text-content {
     display: flex;
     justify-content: center;
-    
 }
 
-p, #buttonLeft, #buttonRight {
-    font-size: 1.5rem;
+p,
+#buttonLeft,
+#buttonRight {
+    font-size: 1.3rem;
     font-weight: 500;
     margin-left: 170px;
     margin-right: 170px;
@@ -50,13 +66,75 @@ p, #buttonLeft, #buttonRight {
 
 .h1-container {
     font-size: 3rem;
-   
+    color: rgb(178, 221, 242);
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-name: h1-anime;
 }
 
 .h2-container {
     font-size: 1.5rem;
-    
+    color: rgb(178, 221, 242);
+
 }
 
+p {
+    color: rgb(178, 221, 242);
+}
 
+@keyframes h1-anime {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
 
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+footer {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+#showItemsInventory {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    /*Anpassar bredden efter innehållet*/
+    height: max-content;
+    /*Anpassar höjden efter innehållet*/
+    position: absolute;
+    /*Placera relativt till närmaste positionerade förälder eller fönstret*/
+    right: 0;
+    /*Placera den vid högerkanten */
+    top: 50%;
+    /*Ökar så flyttas den längre ner? */
+    transform: translateY(-50%);
+    /* Justera så att den är centrerad vertikalt */
+    border: solid;
+    border-width: 5px;
+    border-radius: 5px;
+    border-color: blueviolet;
+    margin-right: 40px;
+}
+
+.shovel-img,
+.casket-img,
+.crystal-img {
+    height: 80px;
+    width: 80px;
+}
+
+.shovel-img,
+.casket-img {
+    border-bottom: solid;
+    border-color: blueviolet;
+}
