@@ -2,10 +2,13 @@ window.addEventListener("DOMContentLoaded", main);
 
 /**Skapar globala variabler så att dessa ska vara tillgängliga utanför 
 funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt dem.*/
-//const h1Scene0 = "The Fourth Dimension";
-const h2Scene0 = "The Fourth Dimension";
+const h2SceneStart = "";
+const pSceneStart = "";
+const imgSceneStart = "";
+
+const h2Scene0 = "";
 const pScene0 = "The world is under the threath of an apocalypse. Humans have been draining the world from it's resources, causing a slow destruction of nature. Despite Mother Earth's warnings, humans have not yet been listening to her words. \n\n Mother Earth is incarnated through The Tree of life and holds the power of the Fourth Dimension, the dimension of time. Mother Earth created time in order to make the world a habitual place for nature and it's creatures since a timeless world is impossible to live in. Time gives nature a course and the ability to progress and give and hold life. Without time there would be no events, no cause, no effect, no course. Nothing would be able to change or progress, there would be no before nor after. Causality would collapse and therefore time and life itself, beacuse nothing would have a meaning and the world would be stuck in a static condition. As a result all living creatures would be put in this static condition, with no ability to experience existence. Thus, we wouldn't know if we're existing or not, we would be stuck in a frozen moment, stuck in timelessness. \n\n The existence of earth is crucial for the existence of the universe as a whole, since earth is working as a lifeforcer and a balancer in the universe. Man's draining of the world and its resources has caused an imbalance in universe. This cause of imbalance has made the universe increase its acceleration leading to a change in the speed of which universe is normally expanding at. These changes in how universe is expanding has led to to changes in how spacetime curves. The Tree of Life which holds the power of The Fourth Dimension, is forced to resort to its last defence, by slowly create more and more extreme weather on earth, slowly making it more and more inhabituable to stop people from destructing it and therefore destruct all life. \n\n Do you dare to try to save the World?";
-const imgScene0 = "/images/hourglass.jpeg";
+const imgScene0 = "";
 
 const h2Scene1 = "Glimpse of the Green Cat";
 const pScene1 = "You are John, a theoretical physicist student at home watching the news. Once again scientists are warning about changes in the universe where the cosmic background radiation becomes more difficult to measure, which indicates that light particles move more slowly as a result of distortion of spacetime. This is a clear sign that the imbalance on earth has now led to an impact on the entire universe and that the dreaded state of static universe is only a matter of time.\n\nYou are devastated about this. You and your friends from the organization 'Earth for Space - Space for Earth' have worked hard trying to inform and educate the society about the changes that one has to make in order to prevent this catastrophy from happening. Although there are a lot of people willing to make a change, the amount have not been enough. You then glimps something green outside your window and hear the sound of a cat, you decide to:\n\n";
@@ -62,16 +65,15 @@ const crystal = {
   imgItem: "/images/smallcrystal.png",
 }
 
-let pickedUpItems = [];
-const availableItems = [];
+
 
 //TO DO:
-//Lägga till en array, men hur? const listOfSceneContentScene1 = [h2Scene1, pScene1, imgScene1];
+//Lägga till en array CHECK!
 //Skapa main-page = Scene0 CHECK!
 //Endast en knapp på main page och slutsidorna CHECK!
 //Hur kan man förbättra scen-funktionerna och återanvända dom? CHECK! :D
 //Hur kan man förbättra knapp-funktionerna och återanvända dom? CHECK! :D
-//Ha med ljud eller video nånstans?
+//Ha med ljud eller video (CHECK!) nånstans?
 
 //Plocka upp och bära föremål, men hur? splice modifiera listan, splice = välja items i arrayer via index nummer
 //let pickedUpItems = ["bird", "pen", "key"]
@@ -83,10 +85,124 @@ const availableItems = [];
 //Lägga in min textfil med handlingen i ett Word-dok.
 //Skriva README
 //Styling
-//Hur gör man styckeindelning i texten som lagts in i js?
+//Hur gör man styckeindelning i texten som lagts in i js? CHECK!
 
 function main() {
-  scene0TheBeginning();
+  sceneStart();
+  pickUpShovel("images/smallshovel2.png");
+  pickUpCasket("images/smallcasket2.png");
+  pickUpCrystal("images/smallcrystal2.png");
+}
+
+let availableItemsInventory;
+const pickedUpItems = [];
+
+function containerForItemsInventory() {
+  console.log("Entering func containerForItemsInventory");
+  const showItemsInventory = document.getElementById("showItemsInventory");
+  console.log("Leaving func containerForItemsInventory");
+}
+
+function pickUpItem(itemName) {
+  console.log("Entering func pickUpItem");
+  pickedUpItems.push(itemName);
+  updateShowItemsInventory();
+  console.log(pickedUpItems);
+  console.log("Leaving func pickUpItem");
+}
+
+function updateShowItemsInventory() {
+  console.log("Entering func updateShowItemsInventory");
+  const showItemsInventory = document.getElementById("showItemsInventory");
+  showItemsInventory.innerHTML = '';
+
+  pickedUpItems.forEach(itemName => {
+    const itemsInventory = document.createElement("div");
+    itemsInventory.classList.add("items-inventory");
+
+    if (itemName.type === "shovel") {
+      const inventoryShovel = document.createElement("img");
+      inventoryShovel.src = itemName.src;
+      inventoryShovel.classList.add("inventory-shovel");
+
+      showItemsInventory.append(inventoryShovel);
+
+    } else if (itemName.type === "casket") {
+      const inventoryCasket = document.createElement("img");
+      inventoryCasket.src = itemName.src;
+      inventoryCasket.classList.add("inventory-casket");
+      showItemsInventory.append(inventoryCasket);
+    }
+    else if (itemName.type === "crystal") {
+      const inventoryCrystal = document.createElement("img");
+      inventoryCrystal.src = itemName.src;
+      inventoryCrystal.classList.add("inventory-crystal");
+      showItemsInventory.append(inventoryCrystal);
+    }
+    showItemsInventory.append(itemsInventory);
+  });
+  console.log("Leaving func updateShowItemsInventory");
+};
+
+//Funktion som plockar upp sina items
+function pickUpShovel(shovelSrc) {
+  console.log("Entering func pickUpShovel");
+  const shovel = document.createElement("img");
+  shovel.src = 'images/smallshovel2.png';
+  shovel.classList.add("shovel-img");
+
+  shovel.onclick = () => {
+    pickUpItem({ type: "shovel", src: shovelSrc });
+    shovel.remove();
+  }
+  //Lägger item i showItemsInventory
+  document.getElementById("showItemsInventory").appendChild(shovel);
+
+  console.log("Leaving func pickUpShovel");
+};
+
+//Funktion som plockar upp sina items
+function pickUpCasket(casketSrc) {
+  console.log("Entering func pickUpCasket");
+  const casket = document.createElement("img");
+  casket.src = 'images/smallcasket2.png';
+  casket.classList.add("casket-img");
+
+  casket.onclick = () => {
+    pickUpItem({ type: "casket", src: casketSrc });
+    casket.remove();
+  }
+  //Lägger item i showItemsInventory
+  document.getElementById("showItemsInventory").appendChild(casket);
+
+  console.log("Leaving func pickUpCesket");
+};
+
+//Funktion som plockar upp sina items
+function pickUpCrystal(crystalSrc) {
+  console.log("Entering func pickUpCrystal");
+  const crystal = document.createElement("img");
+  crystal.src = "images/smallcrystal2.png";
+  crystal.classList.add("crystal-img");
+
+  crystal.onclick = () => {
+    pickUpItem({ type: "crystal", src: crystalSrc });
+    crystal.remove();
+  }
+  //Lägger item i showItemsInventory
+  document.getElementById("showItemsInventory").appendChild(crystal);
+  console.log("Leaving func pickUpCrystal");
+};
+
+
+
+
+function sceneStart() {
+  loadSceneContent(imgSceneStart, h2SceneStart, pSceneStart);
+
+  loadLeftButton();
+  loadRightButton(scene0TheBeginning, "Start");
+  changeButtonVisibility(false, true);
 }
 
 function scene0TheBeginning() {
@@ -146,7 +262,6 @@ function scene6FindWhatYoureLookingFor() {
 
   pickedUpItems.push("shovel", "casket");
   console.log(pickedUpItems);
-  //Här ska man kunna plocka upp the casket and the shovel
 }
 
 function scene7TheMaze() {
@@ -165,8 +280,8 @@ function scene8PortalBack() {
   changeButtonVisibility(true, true);
   pickedUpItems.push("crystal");
   console.log(pickedUpItems);
-  //Här ska man kunna pick up the crystal
 }
+
 function scene9TreeOfLife() {
   loadSceneContent(imgScene9, h2Scene9, pScene9);
 
@@ -175,14 +290,13 @@ function scene9TreeOfLife() {
   changeButtonVisibility(false, true);
   pickedUpItems.splice(0, 3);
   console.log(pickedUpItems);
-  //Här ska man kunna put down the crystal
 }
 
 function scene10HoldingThePower() {
   loadSceneContent(imgScene10, h2Scene10, pScene10);
 
   loadLeftButton();
-  loadRightButton(scene0TheBeginning, "Back to main page");
+  loadRightButton(sceneStart, "Back to main page");
   changeButtonVisibility(false, true);
 }
 
@@ -190,16 +304,64 @@ function loadSceneContent(img, headline, paragraph) {
   const image = document.getElementById("background-img");
   image.src = img;
 
-  //const h1 = document.getElementById("game-title");
-  //h1.innerText = title;
-
   const h2 = document.getElementById("scene-headline");
   h2.innerText = headline;
 
   const p = document.getElementById("scene-paragraph");
   p.innerText = paragraph;
 }
-/**Förklaring function loadSceneContent
+
+
+/*FUNKAR INTE
+function loadSceneStartContent(img, title) {
+  const image = document.getElementById("background-img");
+  image.src = img;
+
+  const h1 = document.getElementById("game-title");
+  h1.innerText = title;
+}
+
+function sceneStart() {
+  const headline1 = document.createElement("h1");
+  const node = document.createTextNode("");
+  headline1.appendChild(node);
+  const element = document.getElementById("game-title");
+  element.appendChild(headline1);
+
+  const h2 = document.getElementById("scene-headline");
+  h2.remove();
+
+  const img = document.getElementById("background-img");
+  img.remove();
+
+  const p = document.getElementById("scene-paragraph");
+  p.remove();
+
+  loadLeftButton();
+  loadRightButton(scene0TheBeginning, "Start");
+  changeButtonVisibility(false, true);
+}
+  
+function loadSceneContent(img, headline, paragraph) {
+  const headline2 = document.createElement("h2");
+  const node2 = document.createTextNode("");
+  headline2.appendChild(node2);
+  const element2 = document.getElementById("scene-headline");
+  element2.appendChild(headline2);
+
+  const imgToScene = document.createElement("img");
+  const node3 = document.createTextNode("");
+  imgToScene.appendChild(node3);
+  const element3 = document.getElementById("background-img");
+  element3.appendChild(imgToScene);
+
+  const pToScene = document.createElement("p");
+  const node4 = document.createTextNode("");
+  pToScene.appendChild(node4);
+  const element4 = document.getElementById("scene-paragraph");
+  element4.appendChild(pToScene);*/
+
+/**Förklaring function loadSceneContent:
 Jag har skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
 Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
 Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text 
@@ -220,7 +382,7 @@ function loadRightButton(toScene, text) {
   buttonRight.onclick = toScene;
   buttonRight.textContent = text;
 }
-/**Förklaring function loadLeftButton
+/**Förklaring function loadLeftButton och loadRightButton:
 Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda, 
 detta genom att funktionen enterScene laddar in vald scen precis som tidigare.
  */
@@ -277,6 +439,21 @@ function loadRightButton(toScene) {
     };
 function enterScene skapades då knapparna först inte funkade att trycka på då det kördes direkt i main och inte när användaren tryckte på dem. 
 }
+
+let pickedUpItems = [];
+const availableItems = [];
+function pickUpItem(itemName) {
+  pickedUpItems.push(itemName);
+}
+
+function dropItem(itemName) {
+  const index = pickedUpItems.indexOf(itemName);
+  pickedUpItems.slice(index, index);
+}
+
+function showItemsInventory(items) {
+}
+
 
 Kod innan function loadSceneContent och loadLeftButton och loadRightButtonsamt kod innan jag la till h1 i scene0:
 function scene2WatchingTv() {
