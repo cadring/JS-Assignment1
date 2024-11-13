@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +11,55 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
 </head>
+
 <body>
+    <div class="h1-container center-text-content">
+        <h1 id="game-title">The Fourth Dimension</h1>
+    </div>
+
+    <div class="h2-container center-text-content">
+        <h2 id="scene-headline"></h2>
+    </div>
+
     <div class="img-container">
         <img id="background-img" src="/images/hourglass.jpeg" alt="">
     </div>
+
+    <video autoplay muted loop id="background-video">
+        <source src="/video/nightsky.mp4" type="video/mp4">
+    </video>
 
     <!--<div class="h1-container center-text-content">
         <h1 id="game-title"></h1>
     </div>-->
 
-    <div class="h2-container center-text-content">
-        <h2 id="scene-headline"></h2>
-    </div>
-    
+
+
     <div class="text-container center-text-content">
         <p id="scene-paragraph"></p>
     </div>
-    
+
     <div class="button-container">
         <button id="buttonLeft"></button>
         <button id="buttonRight"></button>
     </div>
 
-    <!--<div class="item-container">
+    <div id="showItemsInventory">
 
-    </div>-->
+    </div>
+
+    <!--<aside>
+        <div class="item-container">
+        </div>
+    </aside>-->
+
+    <footer>
+        <p>&copy; <span id="year"></span> Catharina Düring</p>
+    </footer>
+
+
 
 
 </body>
+
 </html>
