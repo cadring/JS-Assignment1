@@ -50,9 +50,12 @@ const h2Scene10 = "Holding the power of The Fourth Dimension";
 const pScene10 = "The Stellarplankton has made it possible for The Tree of Life to incapsulate CO2 and make it dissolve. This has made Earth regain its role as a universal balancer. The expansion of the universe is slowing down and space warp is normalizing. The world is no longer being threatened to be put in static timeless condition since The Fourth Dimension is now saved.\nYou did it!\n\n";
 const imgScene10 = "/images/motherearth1.jpg";
 
+const pickedUpItems = [];
+
 //TO DO:
 //Få klart hela plocka upp item-grejen. Ordna så att items bara syns i utvalda scener.
 //Lägga till musik?
+//Göra klart footern så den uppdaterar året
 //Förändringar ska sparas till Local Storage så användaren kan fortsätta efter en reload.
 //Alla globala funktioner, listor och objekt är strukturerade och namngivna väl samt dokumenterade med JS-doc.
 //Lägga in min textfil med handlingen i ett Word-dok.
@@ -69,110 +72,7 @@ const imgScene10 = "/images/motherearth1.jpg";
 
 function main() {
   sceneStart();
-  pickUpShovel("images/smallshovel2.png");
-  pickUpCasket("images/smallcasket2.png");
-  pickUpCrystal("images/smallcrystal2.png");
 }
-
-let availableItemsInventory;
-const pickedUpItems = [];
-
-function containerForItemsInventory() {
-  console.log("Entering func containerForItemsInventory");
-  const showItemsInventory = document.getElementById("showItemsInventory");
-  console.log("Leaving func containerForItemsInventory");
-}
-
-function pickUpItem(itemName) {
-  console.log("Entering func pickUpItem");
-  pickedUpItems.push(itemName);
-  updateShowItemsInventory();
-  console.log(pickedUpItems);
-  console.log("Leaving func pickUpItem");
-}
-
-function updateShowItemsInventory() {
-  console.log("Entering func updateShowItemsInventory");
-  const showItemsInventory = document.getElementById("showItemsInventory");
-  showItemsInventory.innerHTML = '';
-
-  pickedUpItems.forEach(itemName => {
-    const itemsInventory = document.createElement("div");
-    itemsInventory.classList.add("items-inventory");
-
-    if (itemName.type === "shovel") {
-      const inventoryShovel = document.createElement("img");
-      inventoryShovel.src = itemName.src;
-      inventoryShovel.classList.add("inventory-shovel");
-
-      showItemsInventory.append(inventoryShovel);
-
-    } else if (itemName.type === "casket") {
-      const inventoryCasket = document.createElement("img");
-      inventoryCasket.src = itemName.src;
-      inventoryCasket.classList.add("inventory-casket");
-      showItemsInventory.append(inventoryCasket);
-    }
-    else if (itemName.type === "crystal") {
-      const inventoryCrystal = document.createElement("img");
-      inventoryCrystal.src = itemName.src;
-      inventoryCrystal.classList.add("inventory-crystal");
-      showItemsInventory.append(inventoryCrystal);
-    }
-    showItemsInventory.append(itemsInventory);
-  });
-  console.log("Leaving func updateShowItemsInventory");
-};
-
-//Funktion som plockar upp sina items
-function pickUpShovel(shovelSrc) {
-  console.log("Entering func pickUpShovel");
-  const shovel = document.createElement("img");
-  shovel.src = 'images/smallshovel2.png';
-  shovel.classList.add("shovel-img");
-
-  shovel.onclick = () => {
-    pickUpItem({ type: "shovel", src: shovelSrc });
-    shovel.remove();
-  }
-  //Lägger item i showItemsInventory
-  document.getElementById("showItemsInventory").appendChild(shovel);
-
-  console.log("Leaving func pickUpShovel");
-};
-
-//Funktion som plockar upp sina items
-function pickUpCasket(casketSrc) {
-  console.log("Entering func pickUpCasket");
-  const casket = document.createElement("img");
-  casket.src = 'images/smallcasket2.png';
-  casket.classList.add("casket-img");
-
-  casket.onclick = () => {
-    pickUpItem({ type: "casket", src: casketSrc });
-    casket.remove();
-  }
-  //Lägger item i showItemsInventory
-  document.getElementById("showItemsInventory").appendChild(casket);
-
-  console.log("Leaving func pickUpCesket");
-};
-
-//Funktion som plockar upp sina items
-function pickUpCrystal(crystalSrc) {
-  console.log("Entering func pickUpCrystal");
-  const crystal = document.createElement("img");
-  crystal.src = "images/smallcrystal2.png";
-  crystal.classList.add("crystal-img");
-
-  crystal.onclick = () => {
-    pickUpItem({ type: "crystal", src: crystalSrc });
-    crystal.remove();
-  }
-  //Lägger item i showItemsInventory
-  document.getElementById("showItemsInventory").appendChild(crystal);
-  console.log("Leaving func pickUpCrystal");
-};
 
 function sceneStart() {
   loadSceneContent(imgSceneStart, h2SceneStart, pSceneStart);
@@ -237,8 +137,8 @@ function scene6FindWhatYoureLookingFor() {
   loadRightButton(scene7TheMaze, "Enter the maze");
   changeButtonVisibility(true, true);
 
-  pickedUpItems.push("shovel", "casket");
-  console.log(pickedUpItems);
+  pickUpShovel("images/smallshovel2.png");
+  pickUpCasket("images/smallcasket2.png");
 }
 
 function scene7TheMaze() {
@@ -255,8 +155,8 @@ function scene8PortalBack() {
   loadLeftButton(scene2WatchingTv, "Hope this is the way back because you just want to give up and go home");
   loadRightButton(scene9TreeOfLife, "Follow Alphaba into the portal");
   changeButtonVisibility(true, true);
-  pickedUpItems.push("crystal");
-  console.log(pickedUpItems);
+
+  pickUpCrystal("images/smallcrystal2.png");
 }
 
 function scene9TreeOfLife() {
@@ -265,8 +165,6 @@ function scene9TreeOfLife() {
   loadLeftButton();
   loadRightButton(scene10HoldingThePower, "Finish planting the Stellarplankton in The Tree of Life");
   changeButtonVisibility(false, true);
-  pickedUpItems.splice(0, 3);
-  console.log(pickedUpItems);
 }
 
 function scene10HoldingThePower() {
@@ -275,8 +173,19 @@ function scene10HoldingThePower() {
   loadLeftButton();
   loadRightButton(sceneStart, "Back to main page");
   changeButtonVisibility(false, true);
+  addAudioToPickedUpItem("audio/dropdownitemaudio.mp3");
+  dropAllItems();
 }
 
+/**Förklaring function loadSceneContent:
+Jag har skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
+Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
+Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text 
+nedan i varje scen-funktion.
+Förklaring const h1:
+La in h1-element i html, lagt in title i funktionen loadSceneContent samt lagt in en global 
+variabel const h1Scene0 = "Game title", och detta verkar funka till skillnad från tidigare kod, se TESTKOD SOM INTE FUNKAT
+ */
 function loadSceneContent(img, headline, paragraph) {
   const image = document.getElementById("background-img");
   image.src = img;
@@ -289,65 +198,10 @@ function loadSceneContent(img, headline, paragraph) {
 }
 
 
-/*FUNKAR INTE
-function loadSceneStartContent(img, title) {
-  const image = document.getElementById("background-img");
-  image.src = img;
-
-  const h1 = document.getElementById("game-title");
-  h1.innerText = title;
-}
-
-function sceneStart() {
-  const headline1 = document.createElement("h1");
-  const node = document.createTextNode("");
-  headline1.appendChild(node);
-  const element = document.getElementById("game-title");
-  element.appendChild(headline1);
-
-  const h2 = document.getElementById("scene-headline");
-  h2.remove();
-
-  const img = document.getElementById("background-img");
-  img.remove();
-
-  const p = document.getElementById("scene-paragraph");
-  p.remove();
-
-  loadLeftButton();
-  loadRightButton(scene0TheBeginning, "Start");
-  changeButtonVisibility(false, true);
-}
-  
-function loadSceneContent(img, headline, paragraph) {
-  const headline2 = document.createElement("h2");
-  const node2 = document.createTextNode("");
-  headline2.appendChild(node2);
-  const element2 = document.getElementById("scene-headline");
-  element2.appendChild(headline2);
-
-  const imgToScene = document.createElement("img");
-  const node3 = document.createTextNode("");
-  imgToScene.appendChild(node3);
-  const element3 = document.getElementById("background-img");
-  element3.appendChild(imgToScene);
-
-  const pToScene = document.createElement("p");
-  const node4 = document.createTextNode("");
-  pToScene.appendChild(node4);
-  const element4 = document.getElementById("scene-paragraph");
-  element4.appendChild(pToScene);*/
-
-/**Förklaring function loadSceneContent:
-Jag har skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
-Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
-Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text 
-nedan i varje scen-funktion.
-Förklaring const h1:
-La in h1-element i html, lagt in title i funktionen loadSceneContent samt lagt in en global 
-variabel const h1Scene0 = "Game title", och detta verkar funka till skillnad från tidigare kod, se TESTKOD SOM INTE FUNKAT
+/**Förklaring function loadLeftButton och loadRightButton:
+Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda, 
+detta genom att funktionen enterScene laddar in vald scen precis som tidigare.
  */
-
 function loadLeftButton(toScene, text) {
   const buttonLeft = document.getElementById("buttonLeft");
   buttonLeft.onclick = toScene;
@@ -359,11 +213,16 @@ function loadRightButton(toScene, text) {
   buttonRight.onclick = toScene;
   buttonRight.textContent = text;
 }
-/**Förklaring function loadLeftButton och loadRightButton:
-Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda, 
-detta genom att funktionen enterScene laddar in vald scen precis som tidigare.
- */
 
+/**Förklaring function changeButtonVisibility()
+Skapat en klass i CSS som heter .hide-button satt på display: none. 
+Om buttonLeft, om den ska visas (showLeftButton) dvs påståendet är = sant, ta då bort .hide.button
+Annars om inte showLeftButton då är påståendet = falskt, lägg till .hide.button
+updateButtonVisibility(true, true); = Visar båda knapparna
+updateButtonVisibility(true, false); = Visar endast vänster
+updateButtonVisibility(false, true); = Visar endast höger
+updateButtonVisibility(true, true); = Döljer knapparna
+*/
 function changeButtonVisibility(showLeftButton, showRightButton) {
   const buttonLeft = document.getElementById("buttonLeft");
   const buttonRight = document.getElementById("buttonRight");
@@ -385,15 +244,129 @@ function changeButtonVisibility(showLeftButton, showRightButton) {
   }
 }
 
-/**Förklaring function changeButtonVisibility()
-Skapat en klass i CSS som heter .hide-button satt på display: none. 
-Om buttonLeft, om den ska visas (showLeftButton) dvs påståendet är = sant, ta då bort .hide.button
-Annars om inte showLeftButton då är påståendet = falskt, lägg till .hide.button
-updateButtonVisibility(true, true); = Visar båda knapparna
-updateButtonVisibility(true, false); = Visar endast vänster
-updateButtonVisibility(false, true); = Visar endast höger
-updateButtonVisibility(true, true); = Döljer knapparna
-*/
+function containerForItemsInventory() {
+  console.log("Entering func containerForItemsInventory");
+  const showItemsInventory = document.getElementById("showItemsInventory");
+  console.log("Leaving func containerForItemsInventory");
+}
+
+function pickUpItem(itemName) {
+  console.log("Entering func pickUpItem");
+  pickedUpItems.push(itemName);
+  updateShowItemsInventory();
+  console.log(pickedUpItems);
+  console.log("Leaving func pickUpItem");
+}
+
+function dropAllItems() {
+  pickedUpItems.splice(0, pickedUpItems.length); /**Här splicar jag alla items från arrayen pickedUpItems från item from plats index 0 tom hela arrayens längd*/
+  updateShowItemsInventory();
+}
+
+function updateShowItemsInventory() {
+  console.log("Entering func updateShowItemsInventory");
+  const showItemsInventory = document.getElementById("showItemsInventory");
+  showItemsInventory.innerHTML = '';
+
+  pickedUpItems.forEach(itemName => {
+    const itemsInventory = document.createElement("div");
+    itemsInventory.classList.add("items-inventory");
+
+    if (itemName.type === "shovel") {
+      const inventoryShovel = document.createElement("img");
+      inventoryShovel.src = itemName.src;
+      inventoryShovel.classList.add("inventory-shovel");
+
+      showItemsInventory.append(inventoryShovel);
+
+    } else if (itemName.type === "casket") {
+      const inventoryCasket = document.createElement("img");
+      inventoryCasket.src = itemName.src;
+      inventoryCasket.classList.add("inventory-casket");
+      showItemsInventory.append(inventoryCasket);
+    }
+    else if (itemName.type === "crystal") {
+      const inventoryCrystal = document.createElement("img");
+      inventoryCrystal.src = itemName.src;
+      inventoryCrystal.classList.add("inventory-crystal");
+      showItemsInventory.append(inventoryCrystal);
+    }
+    showItemsInventory.append(itemsInventory);
+  });
+  console.log("Leaving func updateShowItemsInventory");
+};
+
+//Funktion som plockar upp sina items
+function pickUpShovel(shovelSrc) {
+  console.log("Entering func pickUpShovel");
+  const shovel = document.createElement("img");
+  shovel.src = "images/smallshovel2.png";
+  shovel.classList.add("shovel-img");
+
+  addAudioToPickedUpItem("/audio/pickedupitemsound.mp3")
+
+  shovel.onclick = () => {
+    pickUpItem({ type: "shovel", src: shovelSrc });
+    shovel.remove();
+  }
+  //Lägger item i showItemsInventory
+  document.getElementById("showItemsInventory").appendChild(shovel);
+
+  console.log("Leaving func pickUpShovel");
+};
+
+//Funktion som plockar upp sina items
+function pickUpCasket(casketSrc) {
+  console.log("Entering func pickUpCasket");
+  const casket = document.createElement("img");
+  casket.src = "images/smallcasket2.png";
+  casket.classList.add("casket-img");
+
+  casket.onclick = () => {
+    pickUpItem({ type: "casket", src: casketSrc });
+    casket.remove();
+  }
+  //Lägger item i showItemsInventory
+  document.getElementById("showItemsInventory").appendChild(casket);
+
+  console.log("Leaving func pickUpCasket");
+};
+
+//Funktion som plockar upp sina items
+function pickUpCrystal(crystalSrc) {
+  console.log("Entering func pickUpCrystal");
+  const crystal = document.createElement("img");
+  crystal.src = "images/smallcrystal2.png";
+  crystal.classList.add("crystal-img");
+
+  addAudioToPickedUpItem("/audio/pickedupitemsound.mp3")
+
+  crystal.onclick = () => {
+    pickUpItem({ type: "crystal", src: crystalSrc });
+    crystal.remove();
+  }
+  //Lägger item i showItemsInventory
+  document.getElementById("showItemsInventory").appendChild(crystal);
+  console.log("Leaving func pickUpCrystal");
+};
+
+function addAudioToPickedUpItem(url) {
+  const audioElement = new Audio(url); // Skapa ett nytt ljudobjekt med URL
+  audioElement.play(); // Spela upp ljudet
+
+  audioElement.addEventListener("canplay", () => {
+    console.log("Ljudet är redo att spelas.");
+  });
+
+  audioElement.addEventListener("error", () => {
+    console.error("Ett fel uppstod vid laddning av ljudet.");
+  });
+}
+
+
+
+
+
 
 /**Om tid blir över jobba vidare på denna
 function inputAnswerToRiddle() {
@@ -483,3 +456,52 @@ function loadScene0Content(img, title, paragraph) {
     const p = document.getElementById("scene-paragraph");
     p.textContent = paragraph;
 }*/
+
+/*FUNKAR INTE
+function loadSceneStartContent(img, title) {
+  const image = document.getElementById("background-img");
+  image.src = img;
+ 
+  const h1 = document.getElementById("game-title");
+  h1.innerText = title;
+}
+ 
+function sceneStart() {
+  const headline1 = document.createElement("h1");
+  const node = document.createTextNode("");
+  headline1.appendChild(node);
+  const element = document.getElementById("game-title");
+  element.appendChild(headline1);
+ 
+  const h2 = document.getElementById("scene-headline");
+  h2.remove();
+ 
+  const img = document.getElementById("background-img");
+  img.remove();
+ 
+  const p = document.getElementById("scene-paragraph");
+  p.remove();
+ 
+  loadLeftButton();
+  loadRightButton(scene0TheBeginning, "Start");
+  changeButtonVisibility(false, true);
+}
+  
+function loadSceneContent(img, headline, paragraph) {
+  const headline2 = document.createElement("h2");
+  const node2 = document.createTextNode("");
+  headline2.appendChild(node2);
+  const element2 = document.getElementById("scene-headline");
+  element2.appendChild(headline2);
+ 
+  const imgToScene = document.createElement("img");
+  const node3 = document.createTextNode("");
+  imgToScene.appendChild(node3);
+  const element3 = document.getElementById("background-img");
+  element3.appendChild(imgToScene);
+ 
+  const pToScene = document.createElement("p");
+  const node4 = document.createTextNode("");
+  pToScene.appendChild(node4);
+  const element4 = document.getElementById("scene-paragraph");
+  element4.appendChild(pToScene);*/
