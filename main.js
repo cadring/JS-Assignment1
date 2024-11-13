@@ -50,41 +50,21 @@ const h2Scene10 = "Holding the power of The Fourth Dimension";
 const pScene10 = "The Stellarplankton has made it possible for The Tree of Life to incapsulate CO2 and make it dissolve. This has made Earth regain its role as a universal balancer. The expansion of the universe is slowing down and space warp is normalizing. The world is no longer being threatened to be put in static timeless condition since The Fourth Dimension is now saved.\nYou did it!\n\n";
 const imgScene10 = "/images/motherearth1.jpg";
 
-const shovel = {
-  name: "Shovel",
-  imgItem: "/images/smallshovel.png",
-}
-
-const casket = {
-  name: "Casket",
-  imgItem: "/images/smallcasket.png",
-}
-
-const crystal = {
-  name: "Crystal",
-  imgItem: "/images/smallcrystal.png",
-}
-
-
-
 //TO DO:
+//Få klart hela plocka upp item-grejen. Ordna så att items bara syns i utvalda scener.
+//Lägga till musik?
+//Förändringar ska sparas till Local Storage så användaren kan fortsätta efter en reload.
+//Alla globala funktioner, listor och objekt är strukturerade och namngivna väl samt dokumenterade med JS-doc.
+//Lägga in min textfil med handlingen i ett Word-dok.
+//Skriva README
+//Bli klar med styling
+//Städa upp i samtliga filer
 //Lägga till en array CHECK!
 //Skapa main-page = Scene0 CHECK!
 //Endast en knapp på main page och slutsidorna CHECK!
 //Hur kan man förbättra scen-funktionerna och återanvända dom? CHECK! :D
 //Hur kan man förbättra knapp-funktionerna och återanvända dom? CHECK! :D
 //Ha med ljud eller video (CHECK!) nånstans?
-
-//Plocka upp och bära föremål, men hur? splice modifiera listan, splice = välja items i arrayer via index nummer
-//let pickedUpItems = ["bird", "pen", "key"]
-//const index = pickedUpItems.indexOf("pen")
-//pickedUpItems.splice(index, 1)
-
-//Förändringar ska sparas till Local Storage så användaren kan fortsätta efter en reload.
-//Alla globala funktioner, listor och objekt är strukturerade och namngivna väl samt dokumenterade med JS-doc.
-//Lägga in min textfil med handlingen i ett Word-dok.
-//Skriva README
-//Styling
 //Hur gör man styckeindelning i texten som lagts in i js? CHECK!
 
 function main() {
@@ -193,9 +173,6 @@ function pickUpCrystal(crystalSrc) {
   document.getElementById("showItemsInventory").appendChild(crystal);
   console.log("Leaving func pickUpCrystal");
 };
-
-
-
 
 function sceneStart() {
   loadSceneContent(imgSceneStart, h2SceneStart, pSceneStart);
@@ -438,6 +415,21 @@ function loadRightButton(toScene) {
         toScene();
     };
 function enterScene skapades då knapparna först inte funkade att trycka på då det kördes direkt i main och inte när användaren tryckte på dem. 
+}
+
+const shovel = {
+  name: "Shovel",
+  imgItem: "/images/smallshovel.png",
+}
+
+const casket = {
+  name: "Casket",
+  imgItem: "/images/smallcasket.png",
+}
+
+const crystal = {
+  name: "Crystal",
+  imgItem: "/images/smallcrystal.png",
 }
 
 let pickedUpItems = [];
