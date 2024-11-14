@@ -28,7 +28,6 @@ body {
 .img-container {
     display: flex;
     justify-content: center;
-
 }
 
 #background-img {
@@ -60,11 +59,12 @@ p,
 #buttonRight {
     font-size: 1.3rem;
     font-weight: 500;
-    margin-left: 170px;
-    margin-right: 170px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 .h1-container {
+    margin-top: 150px;
     font-size: 3rem;
     color: rgb(178, 221, 242);
     animation-duration: 4s;
@@ -75,7 +75,6 @@ p,
 .h2-container {
     font-size: 1.5rem;
     color: rgb(178, 221, 242);
-
 }
 
 p {
@@ -115,8 +114,8 @@ footer {
     /*Placera relativt till närmaste positionerade förälder eller fönstret*/
     right: 0;
     /*Placera den vid högerkanten */
-    top: 50%;
-    /*Ökar så flyttas den längre ner? */
+    top: 140%;
+    /*Öka så flyttas den längre ner */
     transform: translateY(-50%);
     /* Justera så att den är centrerad vertikalt */
     border: solid;
@@ -137,4 +136,19 @@ footer {
 .casket-img {
     border-bottom: solid;
     border-color: blueviolet;
+}
+
+.audio-button {
+    font-family: "Orbitron";
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-color: rgb(178, 221, 242);
+    box-shadow: 3px 3px 2px rgb(64, 70, 72);
+    background-color: blueviolet;
+    color: rgb(178, 221, 242);
+    margin-top: 20px;
+    margin-left: 20px;
 }
