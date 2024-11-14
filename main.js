@@ -1,7 +1,8 @@
 window.addEventListener("DOMContentLoaded", main);
-
-/**Skapar globala variabler så att dessa ska vara tillgängliga utanför 
-funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt dem.*/
+/**
+ * Skapat globala variabler så att dessa ska vara tillgängliga utanför 
+funktionen och inte bara innanför den för att main-funktionen därmed ska kunna komma åt dem.
+*/
 const h2SceneStart = "";
 const pSceneStart = "";
 const imgSceneStart = "";
@@ -173,18 +174,20 @@ function scene10HoldingThePower() {
   loadLeftButton();
   loadRightButton(sceneStart, "Back to main page");
   changeButtonVisibility(false, true);
+
   addAudioToPickedUpItem("audio/dropdownitemaudio.mp3");
   dropAllItems();
 }
 
-/**Förklaring function loadSceneContent:
-Jag har skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
-Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
-Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text 
-nedan i varje scen-funktion.
-Förklaring const h1:
-La in h1-element i html, lagt in title i funktionen loadSceneContent samt lagt in en global 
-variabel const h1Scene0 = "Game title", och detta verkar funka till skillnad från tidigare kod, se TESTKOD SOM INTE FUNKAT
+/**
+ * Förklaring function loadSceneContent:
+ * @param {string} img anger den bild som ska laddas
+ * @param {string} headline anger rubriktexten, i detta fall h2
+ * @param {string} paragraph anger paragraftexten
+  Jag har skapat en variabel som heter image och tilldelar den värdet samma som html-filens element background-img genom att document.getElementById
+  Med image tar man attributet src och ändrar det till img som är den första inputen till funktionen loadSceneContent.
+  Upprepar detta på resten av html-elementen och skapar en gemensam funktion som sen går att kalla på istället för att skriva ut all text 
+  nedan i varje scen-funktion.
  */
 function loadSceneContent(img, headline, paragraph) {
   const image = document.getElementById("background-img");
@@ -197,10 +200,11 @@ function loadSceneContent(img, headline, paragraph) {
   p.innerText = paragraph;
 }
 
-
-/**Förklaring function loadLeftButton och loadRightButton:
-Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda, 
-detta genom att funktionen enterScene laddar in vald scen precis som tidigare.
+/**
+ * Förklaring function loadLeftButton och loadRightButton:
+ * @param {Function} toScene Skapat en funktion för vä och höger-knappen, där det nu räcker med att endast i inputen skriva vilken scen man vill ladda,
+  detta genom att funktionen toScene laddar in vald scen.
+ * @param {string} text anger den text som ska stå på knappen
  */
 function loadLeftButton(toScene, text) {
   const buttonLeft = document.getElementById("buttonLeft");
@@ -214,14 +218,17 @@ function loadRightButton(toScene, text) {
   buttonRight.textContent = text;
 }
 
-/**Förklaring function changeButtonVisibility()
-Skapat en klass i CSS som heter .hide-button satt på display: none. 
-Om buttonLeft, om den ska visas (showLeftButton) dvs påståendet är = sant, ta då bort .hide.button
-Annars om inte showLeftButton då är påståendet = falskt, lägg till .hide.button
-updateButtonVisibility(true, true); = Visar båda knapparna
-updateButtonVisibility(true, false); = Visar endast vänster
-updateButtonVisibility(false, true); = Visar endast höger
-updateButtonVisibility(true, true); = Döljer knapparna
+/**
+ * Förklaring function changeButtonVisibility()
+ * @param {booLean} showLeftButton om detta argument är true, visa vänsterknappen annars ska den döljas
+ * @param {booLean} showRightButton om detta argument är true, visa högerknappen annars dölj den
+  Skapat en klass i CSS som heter .hide-button satt på display: none. 
+  Om buttonLeft, om den ska visas (showLeftButton) dvs påståendet är = sant, ta då bort .hide.button
+  Annars om inte showLeftButton då är påståendet = falskt, lägg till .hide.button
+  updateButtonVisibility(true, true); = Visar båda knapparna
+  updateButtonVisibility(true, false); = Visar endast vänster
+  updateButtonVisibility(false, true); = Visar endast höger
+  updateButtonVisibility(true, true); = Döljer knapparna
 */
 function changeButtonVisibility(showLeftButton, showRightButton) {
   const buttonLeft = document.getElementById("buttonLeft");
@@ -245,26 +252,23 @@ function changeButtonVisibility(showLeftButton, showRightButton) {
 }
 
 function containerForItemsInventory() {
-  console.log("Entering func containerForItemsInventory");
   const showItemsInventory = document.getElementById("showItemsInventory");
-  console.log("Leaving func containerForItemsInventory");
 }
 
 function pickUpItem(itemName) {
-  console.log("Entering func pickUpItem");
   pickedUpItems.push(itemName);
   updateShowItemsInventory();
-  console.log(pickedUpItems);
-  console.log("Leaving func pickUpItem");
 }
 
+/**
+ * Här splicar jag alla items från arrayen pickedUpItems från item from plats index 0 tom hela arrayens längd.
+ * */
 function dropAllItems() {
-  pickedUpItems.splice(0, pickedUpItems.length); /**Här splicar jag alla items från arrayen pickedUpItems från item from plats index 0 tom hela arrayens längd*/
+  pickedUpItems.splice(0, pickedUpItems.length);
   updateShowItemsInventory();
 }
 
 function updateShowItemsInventory() {
-  console.log("Entering func updateShowItemsInventory");
   const showItemsInventory = document.getElementById("showItemsInventory");
   showItemsInventory.innerHTML = '';
 
@@ -293,12 +297,10 @@ function updateShowItemsInventory() {
     }
     showItemsInventory.append(itemsInventory);
   });
-  console.log("Leaving func updateShowItemsInventory");
 };
 
 //Funktion som plockar upp sina items
 function pickUpShovel(shovelSrc) {
-  console.log("Entering func pickUpShovel");
   const shovel = document.createElement("img");
   shovel.src = "images/smallshovel2.png";
   shovel.classList.add("shovel-img");
@@ -311,13 +313,10 @@ function pickUpShovel(shovelSrc) {
   }
   //Lägger item i showItemsInventory
   document.getElementById("showItemsInventory").appendChild(shovel);
-
-  console.log("Leaving func pickUpShovel");
 };
 
 //Funktion som plockar upp sina items
 function pickUpCasket(casketSrc) {
-  console.log("Entering func pickUpCasket");
   const casket = document.createElement("img");
   casket.src = "images/smallcasket2.png";
   casket.classList.add("casket-img");
@@ -328,13 +327,10 @@ function pickUpCasket(casketSrc) {
   }
   //Lägger item i showItemsInventory
   document.getElementById("showItemsInventory").appendChild(casket);
-
-  console.log("Leaving func pickUpCasket");
 };
 
 //Funktion som plockar upp sina items
 function pickUpCrystal(crystalSrc) {
-  console.log("Entering func pickUpCrystal");
   const crystal = document.createElement("img");
   crystal.src = "images/smallcrystal2.png";
   crystal.classList.add("crystal-img");
@@ -347,7 +343,6 @@ function pickUpCrystal(crystalSrc) {
   }
   //Lägger item i showItemsInventory
   document.getElementById("showItemsInventory").appendChild(crystal);
-  console.log("Leaving func pickUpCrystal");
 };
 
 function addAudioToPickedUpItem(url) {
@@ -363,145 +358,13 @@ function addAudioToPickedUpItem(url) {
   });
 }
 
-
-
-
-
-
-/**Om tid blir över jobba vidare på denna
-function inputAnswerToRiddle() {
-    const answerRiddle = document.createElement("INPUT");
-    answerRiddle.setAttribute("type", "text");
-    document.body.appendChild(answerRiddle);
-}*/
-
-/**GAMMAL KOD SOM UPPDATERATS:
-Gamla koden för function loadButton...
-function loadLeftButton(toScene, text) {
-    const buttonLeft = document.getElementById("buttonLeft");
-    buttonLeft.onclick = function enterScene() {
-        toScene();
-}
-function loadRightButton(toScene) {
-    const buttonRight = document.getElementById("buttonRight");
-    buttonRight.onclick = function enterScene() {
-        toScene();
-    };
-function enterScene skapades då knapparna först inte funkade att trycka på då det kördes direkt i main och inte när användaren tryckte på dem. 
+function generateYear() {
+  const date = new Date();
+  let thisYear = date.getFullYear();
+  const year = document.getElementById("year");
+  year.textContent = thisYear;
 }
 
-const shovel = {
-  name: "Shovel",
-  imgItem: "/images/smallshovel.png",
-}
-
-const casket = {
-  name: "Casket",
-  imgItem: "/images/smallcasket.png",
-}
-
-const crystal = {
-  name: "Crystal",
-  imgItem: "/images/smallcrystal.png",
-}
-
-let pickedUpItems = [];
-const availableItems = [];
-function pickUpItem(itemName) {
-  pickedUpItems.push(itemName);
-}
-
-function dropItem(itemName) {
-  const index = pickedUpItems.indexOf(itemName);
-  pickedUpItems.slice(index, index);
-}
-
-function showItemsInventory(items) {
-}
-
-
-Kod innan function loadSceneContent och loadLeftButton och loadRightButtonsamt kod innan jag la till h1 i scene0:
-function scene2WatchingTv() {
-
-    function loadSceneContent(img, headline, paragraph) {
-    const image = document.getElementById("background-img");
-    image.src = img;
-
-    const h2 = document.getElementById("scene-headline");
-    h2.textContent = headline;
-
-    const p = document.getElementById("scene-paragraph");
-    p.textContent = paragraph;
-
-    const buttonLeft = document.getElementById("buttonLeft");
-    buttonLeft.onclick = function enterScene4Collapse() {
-        scene4Collapse();
-    };
-
-    const buttonRight = document.getElementById("buttonRight");
-    buttonRight.onclick = function enterScene3Rabbithole() {
-        scene3Rabbithole();
-    };
-}*/
-
-/**TESTKOD SOM INTE FUNKAT
-Denna funktion verkar köra över den under och då hänger titeln med i övriga scener, funkar därför ej
-function loadScene0Content(img, title, paragraph) {
-    const image = document.getElementById("background-img");
-    image.src = img;
-
-    const h1 = document.getElementById("game-title");
-    h1.textContent = title;
-
-    const p = document.getElementById("scene-paragraph");
-    p.textContent = paragraph;
-}*/
-
-/*FUNKAR INTE
-function loadSceneStartContent(img, title) {
-  const image = document.getElementById("background-img");
-  image.src = img;
- 
-  const h1 = document.getElementById("game-title");
-  h1.innerText = title;
-}
- 
-function sceneStart() {
-  const headline1 = document.createElement("h1");
-  const node = document.createTextNode("");
-  headline1.appendChild(node);
-  const element = document.getElementById("game-title");
-  element.appendChild(headline1);
- 
-  const h2 = document.getElementById("scene-headline");
-  h2.remove();
- 
-  const img = document.getElementById("background-img");
-  img.remove();
- 
-  const p = document.getElementById("scene-paragraph");
-  p.remove();
- 
-  loadLeftButton();
-  loadRightButton(scene0TheBeginning, "Start");
-  changeButtonVisibility(false, true);
-}
-  
-function loadSceneContent(img, headline, paragraph) {
-  const headline2 = document.createElement("h2");
-  const node2 = document.createTextNode("");
-  headline2.appendChild(node2);
-  const element2 = document.getElementById("scene-headline");
-  element2.appendChild(headline2);
- 
-  const imgToScene = document.createElement("img");
-  const node3 = document.createTextNode("");
-  imgToScene.appendChild(node3);
-  const element3 = document.getElementById("background-img");
-  element3.appendChild(imgToScene);
- 
-  const pToScene = document.createElement("p");
-  const node4 = document.createTextNode("");
-  pToScene.appendChild(node4);
-  const element4 = document.getElementById("scene-paragraph");
-  element4.appendChild(pToScene);*/
+document.addEventListener("DOMContentLoaded", function () {
+  generateYear();
+});
