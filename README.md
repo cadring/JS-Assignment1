@@ -6,6 +6,7 @@
 * [Kommentarer/tankar/lärdomar](#kommentarer-tankar-lärdomar)
 * [Källor, ljud, video, bilder mm](#källor-ljud-video-bilder-mm)
 * [Övrigt](#övrigt)
+* [Demolänk](#demolänk)
 
 ## Mål med uppgiften:
 Uppgiften gick ut på att skapa en interaktiv upplevelse där användaren ska kunna göra förändringar i en värld. 
