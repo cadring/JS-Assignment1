@@ -1,10 +1,11 @@
 # The Fourth Dimension
 
 ## Innehåll:
-* [Mål med uppgiften] (#mål-med-uppgiften)
-* [Förarbete] (#förabetet)
-* [Kommentarer/tankar/lärdomar] [#kommentarer-tankar-lärdomar]
-* [Källor, ljud, video, bilder mm] (#källor-ljud-video-bilder-mm)
+* [Mål med uppgiften](#mål-med-uppgiften)
+* [Förarbete](#förarbete)
+* [Kommentarer/tankar/lärdomar](#kommentarer-tankar-lärdomar)
+* [Källor, ljud, video, bilder mm](#källor-ljud-video-bilder-mm)
+* [Övrigt](#övrigt)
 
 ## Mål med uppgiften:
 Uppgiften gick ut på att skapa en interaktiv upplevelse där användaren ska kunna göra förändringar i en värld. 
@@ -28,9 +29,10 @@ För att skapa en struktur för scen-innehållet och vilka scener som skulle led
 * Bakgrundsvideon är hämtad från: https://www.pexels.com/video/a-sky-full-of-stars-at-night-2646392/
 * Bilderna är hämtade från Google, förutom de tre item-bilderna som är genererade av ChatGPT. 
 
-Den ska innehålla en titel, beskrivning av uppgiften och en demo länk (GitHub Pages). Dessutom måste din projektmapp innehålla ”.git” mappen som länkar till ditt GitHub repo.
-LIVE DEMO README
-settings
-pages
-deploy from main
-=> your sajt is live. kopiera in till README filen
+## Övrigt
+* 
+
+Ha med i readme: 
+Den ska innehålla en titel, beskrivning av uppgiften och 
+en demo länk (GitHub Pages). Dessutom måste din projektmapp 
+innehålla ”.git” mappen som länkar till ditt GitHub repo.
