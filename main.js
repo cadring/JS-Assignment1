@@ -13,64 +13,45 @@ const imgScene0 = "";
 
 const h2Scene1 = "Glimpse of the Green Cat";
 const pScene1 = "You are John, a theoretical physicist student at home watching the news. Once again scientists are warning about changes in the universe where the cosmic background radiation becomes more difficult to measure, which indicates that light particles move more slowly as a result of distortion of spacetime. This is a clear sign that the imbalance on earth has now led to an impact on the entire universe and that the dreaded state of a static universe is only a matter of time.\n\nYou are devastated about this. You and your friends from the organization 'Earth for Space - Space for Earth' have worked hard trying to inform and educate the society about the changes that one has to make in order to prevent this catastrophe from happening. Although there are a lot of people willing to make a change, the amount has not been enough. You then glimpse something green outside your window and hear the sound of a cat, you decide to:\n\n";
-const imgScene1 = "/images/greencat.jpg";
+const imgScene1 = "images/greencat.jpg";
 
 const h2Scene2 = "Watching tv";
 const pScene2 = "You find yourself in front of your tv again, watching the news broadcast about the future of Earth, humanity and the universe as a whole. A wave of feelings of apprehensiveness floods over you and you:\n\n";
-const imgScene2 = "/images/watchingtv.jpg";
+const imgScene2 = "images/watchingtv.jpg";
 
 const h2Scene3 = "The rabbithole";
 const pScene3 = "Once inside the rabbithole you meet up with the Riddling Rabbit and you're faced with solving this riddle before you and Alphaba can continue. The riddle goes like this and you decide to: \n\n 'I am the parent of civilizations, the killer of heroes. Without me, you cannot survive, but embrace me too much, and you’ll cease to thrive. What am I?'\n\n";
-const imgScene3 = "/images/rabbithole.jpeg";
+const imgScene3 = "images/rabbithole.jpeg";
 
 const h2Scene4 = "Collapse of Time";
 const pScene4 = "'Ignorance is equal to destruction, the apocalypse is now upon you'\n\n- Mother Earth";
-const imgScene4 = "/images/skull.jpg";
+const imgScene4 = "images/skull.jpg";
 
 const h2Scene5 = "Planet Alvograth";
 const pScene5 = "Through a portal that became visible after solving the riddle, you've now entered the desertlike planet Alvograth. You and Alphaba find yourselves in front of the entrance of The Maze of Reflection. Alphaba hands you a letter. The letter is from the Riddling Rabbit and says:\n\n'Once you find what you should be looking for, be sure to pick them both up, in the end you will need to collect what you've dug up.'\n\nThe letter then crumbles in your hands and you look confused and:\n\n";
-const imgScene5 = "/images/planetaportal.jpeg";
+const imgScene5 = "images/planetaportal.jpeg";
 
 const h2Scene6 = "The Maze of Reflection";
 const pScene6 = "You've found a small casket and a shovel. You keep repeating the letter from the Riddling Rabbit in your head and repeat out loud:\n\n '...in the end you will need to collect what you've dug up', and say to Alphaba, -I think we have to enter the maze and dig for something in the end of it, I just hope we'll get to there.\n\nYou:\n\n";
-const imgScene6 = "/images/nesportal.jpg";
+const imgScene6 = "images/nesportal.jpg";
 
 const h2Scene7 = "May you find what you're looking";
 const pScene7 = "You and Alphaba have reached the end of the maze, while you take a deep sigh of relief at having made it through the maze, the maze closes behind you. On the wall of the maze an image appears that at first looks like water, the image then starts to reflect on the ground in front of you, and you say to Alphaba,\n\n-I think we're supposed to dig here.\n\nWithout knowing what you're searching for: \n\n";
-const imgScene7 = "/images/watermaze.jpg";
+const imgScene7 = "images/watermaze.jpg";
 
 const h2Scene8 = "The Portal Back";
 const pScene8 = "You've found what looks like a green crystal and say,\n\n-It has the same green color as you Alphaba, I think we just found what we 'should be looking for'.\n\nYou put the crystal in the small casket. Alphaba yawns and heads towards of what looks like a portal and you:\n\n";
-const imgScene8 = "/images/stargateportal.jpeg";
+const imgScene8 = "images/stargateportal.jpeg";
 
 const h2Scene9 = "The Tree of Life";
 const pScene9 = "Once through the portal you find yourself and Alphaba back on Earth. The place seems familiar, yet you don't recall being here before. In front of you stands the most astounding grandiose and beautiful tree you've ever witnessed. A warm wind sweeps through and the tree starts to talk,\n\n-I am Mother Earth, incarnated in The Tree of Life. I am the Mother of all living and the protector of The Fourth Dimension.\n\nMother Earth asks Alphaba to hand over an infrared telescope to you and says,\n\n-Now look through it towards the sky, what do you see John?\n\n-That there seems to be a lot of red light up there, is this the phenomenon of redshift due to the expansion of the universe, ypu aks?\n\n-Indeed it is, Mother Earth replies, this is what happens when the wavelength of light is being stretched out due to the accelerated expansion of the universe caused by the imbalance of the Earth. The universe has increased its acceleration leading to a change in the speed of which universe is normally expanding at, that is why you see an extreme redshift and that is why time is about to collapse. The crystal you found contains Stellarplankton. This substance has extreme photosynthetical properties and therefore possesses the power of reversing the negative climate effects human has caused the earth, by normalizing the CO2-levels and give nature the chance to heal. This will then slow down the expansion of the universe, normalizing space warp and therefore time. Time will go back being relative and not timeless. But Before this is possible you'll need to plant the Stellarplankton right here in The Tree of Life, then Stellarplankton can unleash its powers.\n\nYou:\n\n";
-const imgScene9 = "/images/treeoflife2.jpg";
+const imgScene9 = "images/treeoflife2.jpg";
 
 const h2Scene10 = "Holding the power of The Fourth Dimension";
 const pScene10 = "The Stellarplankton has made it possible for The Tree of Life to incapsulate CO2 and make it dissolve. This has made Earth regain its role as a universal balancer. The expansion of the universe is slowing down and space warp is normalizing. The world is no longer being threatened to be put in static timeless condition since The Fourth Dimension is now saved.\n\nYou did it!\n\n";
-const imgScene10 = "/images/motherearth1.jpg";
+const imgScene10 = "images/motherearth1.jpg";
 
 const pickedUpItems = [];
-
-//TO DO:
-//Förändringar ska sparas till Local Storage så användaren kan fortsätta efter en reload.
-//Lägga in min textfil med handlingen i ett Word-dok.
-//Skriva README
-//Bli klar med styling
-//Städa upp i samtliga filer
-
-//Få klart hela plocka upp item-grejen. Ordna så att items bara syns i utvalda scener. CHECK!
-//Lägga till musik? CHECK!
-//Göra klart footern så den uppdaterar året CHECK!
-//Alla globala funktioner, listor och objekt är strukturerade och namngivna väl samt dokumenterade med JS-doc. CHECK!
-//Lägga till en array CHECK!
-//Skapa main-page = Scene0 CHECK!
-//Endast en knapp på main page och slutsidorna CHECK!
-//Hur kan man förbättra scen-funktionerna och återanvända dom? CHECK! :D
-//Hur kan man förbättra knapp-funktionerna och återanvända dom? CHECK! :D
-//Ha med ljud eller video (CHECK!) nånstans?
-//Hur gör man styckeindelning i texten som lagts in i js? CHECK!
 
 function main() {
   sceneStart();
@@ -313,7 +294,7 @@ function pickUpShovel(shovelSrc) {
   shovel.src = "images/smallshovel2.png";
   shovel.classList.add("shovel-img");
 
-  addAudioToPickedUpItem("/audio/pickedupitemsound2.mp3")
+  addAudioToPickedUpItem("audio/pickedupitemsound2.mp3")
   /**
    * När man klickar på spaden
    */
@@ -354,7 +335,7 @@ function pickUpCrystal(crystalSrc) {
   crystal.src = "images/smallcrystal2.png";
   crystal.classList.add("crystal-img");
 
-  addAudioToPickedUpItem("/audio/pickedupitemsound2.mp3")
+  addAudioToPickedUpItem("audio/pickedupitemsound2.mp3")
   /**
    * När man klickar på kristallen
    */
