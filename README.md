@@ -11,7 +11,7 @@
 Uppgiften gick ut på att skapa en interaktiv upplevelse där användaren ska kunna göra förändringar i en värld. 
 
 ## Förarbete
-Jag tog orden "låt kreativiten flöda" på fullt allvar. Väldigt omgående fick jag många ideer och började skriva ner en story för "spelet". För full story, v.g. se PDF-fil. Inspiration för min story har jag fått från Neverending story, The Labyrinth, Stargate, The Fifth Element, Alice i underlandet, musikalen Wicked och samt från musik av bla Futurecop!. Utöver detta bidrog mitt intresse för rymden och populärvetenskap till att det var givet för mig att storyn måste innehålla mycket inslag av detta. 
+Jag tog orden "låt kreativiten flöda" på fullt allvar. Väldigt omgående fick jag många ideer och började skriva ner en story för "spelet". För samlad story, v.g. se PDF-fil [Gå till PDF](#/docs/Individuell Inlämning Javascript The Fourth Dimension.pdf). Inspiration för min story har jag fått från Neverending story, The Labyrinth, Stargate, The Fifth Element, Alice i underlandet, musikalen Wicked och samt från musik av bla Futurecop!. Utöver detta bidrog mitt intresse för rymden och populärvetenskap till att det var givet för mig att storyn måste innehålla mycket inslag av detta. 
 
 För att skapa en struktur för scen-innehållet och vilka scener som skulle leda vart, gjorde jag ett mycket enkelt (dock väldigt användbart) flödesschema med klassisk penna och papper. Detta är något jag kommer ta med mig som ett värdefullt hjälpmedel även in i framtida projekt. 
 
@@ -30,7 +30,7 @@ För att skapa en struktur för scen-innehållet och vilka scener som skulle led
 * Bilderna är hämtade från Google, förutom de tre item-bilderna som är genererade av ChatGPT. 
 
 ## Övrigt
-* 
+* [Gå till PDF](#/docs/Individuell Inlämning Javascript The Fourth Dimension.pdf)
 
 Ha med i readme: 
 Den ska innehålla en titel, beskrivning av uppgiften och 
