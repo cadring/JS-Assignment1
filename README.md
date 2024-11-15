@@ -1,23 +1,32 @@
-The Fourth Dimension
+# The Fourth Dimension
 
+## Innehåll:
+* [Mål med uppgiften] (#mål-med-uppgiften)
+* [Förarbete] (#förabetet)
+* [Kommentarer/tankar/lärdomar] [#kommentarer-tankar-lärdomar]
+* [Källor, ljud, video, bilder mm] (#källor-ljud-video-bilder-mm)
+
+## Mål med uppgiften:
 Uppgiften gick ut på att skapa en interaktiv upplevelse där användaren ska kunna göra förändringar i en värld. 
 
-Jag tog orden "låt kreativiten flöda" på fullt allvar och fick många ideer väldigt omgående. Storyn till spelet har jag kommit på själv, för full story, v.g. se PDF-filen... Inspiration för min story har jag fått från Neverending story, The Labyrinth, Stargate, The Fifth Element, Alice i underlandet, musikalen Wicked och samt från musik av bla Futurecop!. Utöver detta bidrog mitt intresse för rymden och populärvetenskap till att det var givet för mig att storyn måste innehålla mycket inslag av detta. 
+## Förarbete
+Jag tog orden "låt kreativiten flöda" på fullt allvar. Väldigt omgående fick jag många ideer och började skriva ner en story för "spelet". För full story, v.g. se PDF-fil. Inspiration för min story har jag fått från Neverending story, The Labyrinth, Stargate, The Fifth Element, Alice i underlandet, musikalen Wicked och samt från musik av bla Futurecop!. Utöver detta bidrog mitt intresse för rymden och populärvetenskap till att det var givet för mig att storyn måste innehålla mycket inslag av detta. 
 
-Ljudeffekterna som spelas när man plockar upp och lägger ner items är hämtade från: https://pixabay.com/sound-effects/search/pling/
-Musiken som man kan välja att ha i bakgrunden är skapad av min bror Patrik Werner. 
-Gåtan i scen 3 The Rabbithole är hämtad från: https://riddlequests.com/riddles-about-time-with-answers/
-Bakgrundsvideon är hämtad från: https://www.pexels.com/video/a-sky-full-of-stars-at-night-2646392/
-Vissa av bilderna är hämtade från Google och vissa är genererade av ChatGPT. 
+För att skapa en struktur för scen-innehållet och vilka scener som skulle leda vart, gjorde jag ett mycket enkelt (dock väldigt användbart) flödesschema med klassisk penna och papper. Detta är något jag kommer ta med mig som ett värdefullt hjälpmedel även in i framtida projekt. 
 
-För att skapa en struktur för scen-innehållet och vilka scener som skulle leda vart, gjorde jag ett mycket enkelt (dock väldigt användbart) flödeschema med vanligt papper och penna. Detta är något jag kommer ta med mig som ett värdefullt hjälpmedel även in i framtida projekt. 
+## Kommentarer/tankar/lärdomar:
+* När det var dags att sätta igång och koda så började med att skapa funktioner för scenerna och få knapparna att ta mig dit jag ville. Nu i efterhand hade jag önskat att jag byggt upp mina funktioner på ett annat sätt så att de skulle varit mer dynamiska. Under tidens gång upplevde jag nämligen att jag blev lite låst vid strukturen över hur varje scen var tvungen att se ut och fungera. 
+* Jag hade som målsättning att uppfylla samtliga VG-krav, men då jag fick problem att skapa local storage och samtidigt tidsbrist så blev jag tvungen att hoppa över denna punkten. Jag valde ändå att göra övriga VG-punkter för att ha gjort dessa moment och därmed ha fått öva på dem.  
+* Bakgrundsmusik och ljudeffekter var kanske inte nödvändigt att lägga tid på, samtidigt så känns det väldigt kul att ha detta på plats för att förstärka upplevelsen och känslan i min värld. 
+* Jag fick även ta ner målsättningen jag hade för vad man skulle kunna göra med mina för items då tiden sprang iväg. Jag fick "nöja" mig med att kunna plocka upp items i två scener och lägga ner dom i en annan och att detta visas visuellt samt med ljudeffekter. 
+* Jag hade en vision att man i scen 3 skulle haft ett inputfält där svaret på gåtan skulle skrivas in och där rätt svar skulle göra högerknappen klickbar och därmed möjligt att komma vidare i spelet. Detta fick jag också hoppa över. 
 
-Kommentarer/tankar om min kod:
-Nu i efterhand hade jag önskat att jag byggt upp mina funktioner lite annorlunda så att dem för att göra dem mer dynamiska så att jag inte var så låst vid strukturen över hur varje scen var tvungen att se ut och fungera. 
-Jag hade målsättning att klara av samtliga VG-krav, men tiden räckte inte till till ffa punkten att skapa Local storage. Så detta var jag tvungen att släppa, men jag valde ändå att göra övriga VG-punkter för att ha gjort dessa moment och ha övat på dem.  Bakgrundsmusik och ljudeffekter var jukanske inte nödvändigt att lägga tid på, samtidigt så känns det väldigt kul att nu ha med detta för att förstärka upplevelsen och känslan. 
-
-Fick också ta ner målsättningen för items, hur man kan plcoka upp dem och göra det enklare
-Jag hade en vision om att i scene 3 skapa ett inputfält för att skriva in svaret på gåtan och att rätt svar sen skulle göra högerknappen klickbar och möjligt att komma vidare i spelet. Detta fick jag också hoppa över. 
+## Källor ljud, video, bilder mm:
+* Ljudeffekterna som spelas när man plockar upp och lägger ner items är hämtade från: https://pixabay.com/sound-effects/search/pling/
+* Musiken som man kan välja att ha i bakgrunden är skapad av min bror Patrik Werner. 
+* Gåtan i scen 3 The Rabbithole är hämtad från: https://riddlequests.com/riddles-about-time-with-answers/
+* Bakgrundsvideon är hämtad från: https://www.pexels.com/video/a-sky-full-of-stars-at-night-2646392/
+* Bilderna är hämtade från Google, förutom de tre item-bilderna som är genererade av ChatGPT. 
 
 Den ska innehålla en titel, beskrivning av uppgiften och en demo länk (GitHub Pages). Dessutom måste din projektmapp innehålla ”.git” mappen som länkar till ditt GitHub repo.
 LIVE DEMO README
