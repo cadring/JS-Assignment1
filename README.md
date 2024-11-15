@@ -33,4 +33,4 @@ För att skapa en struktur för scen-innehållet och vilka scener som skulle led
 * [Gå till PDF](#/docs/Individuell Inlämning Javascript The Fourth Dimension.pdf)
 
 ## Demo-länk:
-* [Demolänk](#demolänk)
+* [Demolänk](https://cadring.github.io/JS-Assignment1/)
