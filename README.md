@@ -32,7 +32,5 @@ För att skapa en struktur för scen-innehållet och vilka scener som skulle led
 ## Övrigt
 * [Gå till PDF](#/docs/Individuell Inlämning Javascript The Fourth Dimension.pdf)
 
-Ha med i readme: 
-Den ska innehålla en titel, beskrivning av uppgiften och 
-en demo länk (GitHub Pages). Dessutom måste din projektmapp 
-innehålla ”.git” mappen som länkar till ditt GitHub repo.
+## Demo-länk:
+* [Demolänk](#demolänk)
