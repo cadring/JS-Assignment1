@@ -35,3 +35,5 @@ För att skapa en struktur för scen-innehållet och vilka scener som skulle led
 
 ## Demo-länk:
 * [Demolänk](https://cadring.github.io/JS-Assignment1/)
+
+![Startscene](images/imgforreadmefile.png)
