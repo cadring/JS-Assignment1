@@ -30,7 +30,7 @@ För att skapa en struktur för scen-innehållet och vilka scener som skulle led
 * Bilderna är hämtade från Google, förutom de tre item-bilderna som är genererade av ChatGPT. 
 
 ## Övrigt
-* [Gå till PDF](#/docs/Individuell Inlämning Javascript The Fourth Dimension.pdf)
+* [Gå till PDF](https://github.com/cadring/JS-Assignment1/blob/main/docs/Individuell%20Inl%C3%A4mning%20Javascript%20The%20Fourth%20Dimension.pdf)
 
 ## Demo-länk:
 * [Demolänk](https://cadring.github.io/JS-Assignment1/)
